@@ -12,5 +12,15 @@ body,
 #root {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body,
+#root {
+  max-width: 2560px;
 }

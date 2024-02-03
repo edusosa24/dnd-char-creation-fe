@@ -1,13 +1,15 @@
-// import { Routes, Route, Link, useMatch, useNavigate } from 'react-router-dom';
-
-//import { Login } from '../components/homeForms/login';
-import { Home } from '../pages/home';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { SignUpPage } from '../pages/signUp';
+import { LoginPage } from '../pages/login';
 
 const App = () => {
   return (
-    <>
-      <Home />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

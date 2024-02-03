@@ -1,61 +1,70 @@
-import { useAppDispatch } from '../../utils/hooks';
-import { createUser } from '../../reducers/userReducer';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { signUpSchema } from '../../utils/validators/signUpValidator';
+import * as style from '../../assets/styles/components/homeForms/homeForms.json';
+import { iUser } from '../../utils/interfaces/iUser';
+import userServices from '../../services/userServices';
+
+signUpSchema.required();
 
 export const SignUp = () => {
-  const dispatch = useAppDispatch();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    setError
+  } = useForm({ resolver: yupResolver(signUpSchema) });
 
-  const createAccount = async (event: any) => {
-    event.preventDefault();
-    const username = event.target.username.value;
-    const password = event.target.password.value;
-    event.target.username.value = '';
-    event.target.password.value = '';
-    dispatch(createUser({ username, password }));
+  const createAccount: SubmitHandler<iUser> = async (data: iUser) => {
+    try {
+      const response = await userServices.postOne(data);
+      alert(`User ${response.username} successfully created`);
+    } catch (err: any) {
+      if (err.message.includes('400')) {
+        setError('username', { message: '-username alredy exists' });
+      } else {
+        alert('Unexpected error');
+      }
+    }
   };
 
-  // Default
-  const component =
-    'flex flex-col bg-stone-100 p-8 rounded-lg justify-between bg-opacity-50 h-96 w-72';
-  const title = 'font-extrabold text-2xl text-center text-red-600 select-none';
-  const form =
-    'flex flex-col justify-around align-middle items-center p-5 h-4/6';
-  const label = 'text-sm text-red-600 font-bold select-none';
-  const input =
-    'border-2 border-gray-300 hover:border-gray-500 focus:border-gray-500 rounded-sm p-1 ring-red-600 focus:ring-2 outline-none';
-  const button =
-    'text-center text-white p-3 mt-10 rounded-lg bg-red-600 hover:bg-red-700 shadow-lg transform active:scale-90 transition-transform select-none';
-
-  // 1280px
-  const xlComponent = 'xl:h-96 xl:w-96';
-  const xlButton = 'xl:h-16 xl:w-32 xl:text-lg';
-
-  // 1536px
-  const xxlComponent = '2xl:h-[29rem] 2xl:w-[27rem]';
-  const xxlform = '2xl:h-5/6 2xl:pt-[15%] 2xl:pb-[15%]';
-
   return (
-    <div className={`${component} ${xlComponent} ${xxlComponent}`}>
-      <h3 className={`${title}`}>SIGN UP</h3>
-      <form onSubmit={createAccount} className={`${form} ${xxlform}`}>
-        <fieldset className="flex flex-col w-full justify-around">
-          <label htmlFor="username" className={`${label}`}>
+    <div
+      className={`${style.def.component} ${style.xl.component} ${style.xxl.component}`}
+    >
+      <h3 className={`${style.def.title}`}>SIGN UP</h3>
+      <form
+        onSubmit={handleSubmit(createAccount)}
+        className={`${style.def.form} ${style.xxl.form}`}
+      >
+        <fieldset className={`${style.def.fieldset}`}>
+          <label htmlFor="username" className={`${style.def.label}`}>
             username
           </label>
-          <input type="text" name="username" className={`${input}`} />
+          <input {...register('username')} className={`${style.def.input}`} />
+          <p className={`${style.def.error}`}> {errors.username?.message}</p>
         </fieldset>
-        <fieldset className="flex flex-col w-full justify-around">
-          <label htmlFor="password" className={`${label}`}>
+        <fieldset className={`${style.def.fieldset}`}>
+          <label htmlFor="password" className={`${style.def.label}`}>
             password
           </label>
-          <input type="password" name="password" className={`${input}`} />
+          <input
+            type="password"
+            {...register('password')}
+            className={`${style.def.input}`}
+          />
+          <p className={`${style.def.error} `}> {errors.password?.message}</p>
         </fieldset>
-        <button type="submit" className={`${button} ${xlButton}`}>
+        <button
+          type="submit"
+          className={`${style.def.button} ${style.xl.button}`}
+        >
           Register
         </button>
       </form>
       <p className="text-center text-sm">
         Already have an account?{' '}
-        <a href="" className="font-bold text-red-600 hover:text-red-500">
+        <a href="/" className="font-bold text-red-600 hover:text-red-500">
           login
         </a>
       </p>
