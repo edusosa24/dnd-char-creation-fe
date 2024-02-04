@@ -1,4 +1,4 @@
-import * as style from '../../assets/styles/components/homeLogo.json';
+import * as style from '../../assets/styles/components/homeForms/homeLogo.json';
 
 export const HomeLogo = () => {
   return (

@@ -5,11 +5,14 @@ import * as style from '../../assets/styles/components/homeForms/homeForms.json'
 import { iUser } from '../../utils/interfaces/iUser';
 import { useAppDispatch } from '../../utils/hooks';
 import { loginUser } from '../../reducers/sessionReducer';
+import { useNavigate } from 'react-router-dom';
+import { setNotification } from '../../reducers/notificationReducer';
 
 loginSchema.required();
 
 export const Login = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -19,14 +22,15 @@ export const Login = () => {
 
   const login: SubmitHandler<iUser> = async (data: iUser) => {
     try {
-      await dispatch(loginUser(data));
-      // redirect to profile
+      const response = await dispatch(loginUser(data));
+      dispatch(setNotification('Login in, please wait.', 'info', 2));
+      setTimeout(() => {
+        navigate(`/profile/${response.username}`);
+      }, 2000);
     } catch (err: any) {
-      if (err.message.includes('401')) {
-        alert('username or password is incorrect');
-      } else {
-        alert('Unexpected error');
-      }
+      dispatch(
+        setNotification('username or password is incorrect.', 'error', 3)
+      );
     }
   };
 

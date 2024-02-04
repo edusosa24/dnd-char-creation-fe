@@ -4,10 +4,16 @@ import { signUpSchema } from '../../utils/validators/signUpValidator';
 import * as style from '../../assets/styles/components/homeForms/homeForms.json';
 import { iUser } from '../../utils/interfaces/iUser';
 import userServices from '../../services/userServices';
+import { useAppDispatch } from '../../utils/hooks';
+import { setNotification } from '../../reducers/notificationReducer';
+import { useNavigate } from 'react-router-dom';
 
 signUpSchema.required();
 
 export const SignUp = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -18,12 +24,21 @@ export const SignUp = () => {
   const createAccount: SubmitHandler<iUser> = async (data: iUser) => {
     try {
       const response = await userServices.postOne(data);
-      alert(`User ${response.username} successfully created`);
+      dispatch(
+        setNotification(
+          `User ${response.username} successfully created.`,
+          'success',
+          2
+        )
+      );
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
     } catch (err: any) {
       if (err.message.includes('400')) {
         setError('username', { message: '-username alredy exists' });
       } else {
-        alert('Unexpected error');
+        dispatch(setNotification('An unexpected error ocurred.', 'error', 3));
       }
     }
   };
