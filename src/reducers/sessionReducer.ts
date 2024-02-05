@@ -22,4 +22,10 @@ export const loginUser = (user: iUser) => {
   };
 };
 
+export const setLogin = (sessionData: any) => {
+  return (dispatch: Dispatch) => {
+    dispatch(setCredentials(sessionData));
+  };
+};
+
 export default sessionSlice.reducer;

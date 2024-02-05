@@ -11,8 +11,8 @@
     "text": "md:text-sm"
   },
   "xl": {
-    "button": "xl:text-md xl:ml-3 xl:mr-3",
-    "type": "xl:text-md",
-    "text": "xl:text-md"
+    "button": "xl:text-lg xl:ml-3 xl:mr-3",
+    "type": "xl:text-lg",
+    "text": "xl:text-lg"
   }
 }

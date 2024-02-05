@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import sessionReducer from '../reducers/sessionReducer';
 import notificationReducer from '../reducers/notificationReducer';
+import charactersReducer from '../reducers/charactersReducer';
 
 export const store = configureStore({
   reducer: {
     session: sessionReducer,
-    notification: notificationReducer
+    notification: notificationReducer,
+    characters: charactersReducer
   }
 });
 

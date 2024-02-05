@@ -2,7 +2,7 @@
   "def": {
     "section": "flex flex-col justify-center w-max",
     "logo": "bg-dnd-logo  bg-center bg-contain bg-no-repeat w-40 h-24",
-    "title": "font-bold self-center text-md text-white bg-black bg-opacity-10 w-max select-none"
+    "title": "font-bold self-center text-lg text-white bg-black bg-opacity-10 w-max select-none"
   },
   "md": {
     "mdLogo": "md:w-60 md:h-36",

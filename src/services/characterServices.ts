@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { iUser } from '../utils/interfaces/iUser';
+// import { iUser } from '../utils/interfaces/iUser';
 
-const baseUrl: string = 'http://localhost:3000/api/users';
+const baseUrl: string = 'http://localhost:3000/api/characters';
 
 const getOne = async (userId: string) => {
   const response = await axios.get(`${baseUrl}/${userId}`).catch((err) => {
@@ -10,9 +10,9 @@ const getOne = async (userId: string) => {
   return response.data;
 };
 
-const getOneByUsername = async (username: string, token: string) => {
+const getAll = async (userId: string, token: string) => {
   const response = await axios
-    .get(`${baseUrl}/${username}`, {
+    .get(`${baseUrl}/user/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -23,6 +23,7 @@ const getOneByUsername = async (username: string, token: string) => {
   return response.data;
 };
 
+/*
 const postOne = async (userData: iUser) => {
   const response = await axios.post(`${baseUrl}`, userData).catch((err) => {
     throw err;
@@ -36,5 +37,5 @@ const deleteOne = async (userId: string) => {
   });
   return response.status;
 };
-
-export default { getOne, postOne, deleteOne, getOneByUsername };
+*/
+export default { getOne, getAll };

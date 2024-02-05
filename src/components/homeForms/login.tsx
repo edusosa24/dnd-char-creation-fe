@@ -7,6 +7,7 @@ import { useAppDispatch } from '../../utils/hooks';
 import { loginUser } from '../../reducers/sessionReducer';
 import { useNavigate } from 'react-router-dom';
 import { setNotification } from '../../reducers/notificationReducer';
+import { saveStorage } from '../../utils/functions';
 
 loginSchema.required();
 
@@ -24,6 +25,7 @@ export const Login = () => {
     try {
       const response = await dispatch(loginUser(data));
       dispatch(setNotification('Login in, please wait.', 'info', 2));
+      saveStorage(response);
       setTimeout(() => {
         navigate(`/profile/${response.username}`);
       }, 2000);

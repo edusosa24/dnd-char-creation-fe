@@ -1,6 +1,6 @@
 {
   "def": {
-    "conainer": "container flex min-w-full min-h-full bg-cover bg-center bg-no-repeat flex-col p-10 self-center mx-auto justify-around items-center my-auto"
+    "container": "container flex min-w-full min-h-full bg-cover bg-center bg-no-repeat flex-col p-10 self-center mx-auto justify-around items-center my-auto"
   },
   "md": {
     "mdContainer": "md:flex-row"
