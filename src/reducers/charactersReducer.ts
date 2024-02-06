@@ -12,20 +12,10 @@ const characterSlice = createSlice({
 
 export const { updateCharacters } = characterSlice.actions;
 
-export const setcharacters = (characters: any[]) => {
+export const setCharacters = (characters: any[]) => {
   return (dispatch: Dispatch) => {
     dispatch(updateCharacters(characters));
   };
 };
-
-/*     {
-      general: {
-        name: '',
-        class: '',
-        race: '',
-        level: 0
-      },
-      id: ''
-    } */
 
 export default characterSlice.reducer;

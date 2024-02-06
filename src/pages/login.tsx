@@ -12,7 +12,7 @@ export const LoginPage = () => {
   });
 
   useEffect(() => {
-    if (session) {
+    if (session.userId !== '') {
       navigate(`/profile/${session.username}`);
     }
   });

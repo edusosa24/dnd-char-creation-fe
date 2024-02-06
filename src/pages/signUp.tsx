@@ -12,7 +12,7 @@ export const SignUpPage = () => {
   });
 
   useEffect(() => {
-    if (session) {
+    if (session.userId !== '') {
       navigate(`/profile/${session.username}`);
     }
   });
