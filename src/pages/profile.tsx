@@ -5,7 +5,7 @@ import { Characters } from '../components/userProfile/characters';
 export const ProfilePage = () => {
   return (
     <div
-      className={`container flex flex-col mx-auto w-full space-y-80 bg-slate-100`}
+      className={`container flex min-w-full min-h-full bg-profile bg-cover bg-center bg-no-repeat flex-col self-center mx-auto justify-center space-y-10 items-center my-auto`}
     >
       <Characters />
       <Campaigns />

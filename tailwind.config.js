@@ -10,6 +10,7 @@ export default {
     backgroundImage: {
       'home-signup': "url('/src/assets/images/bg-signup.jpg')",
       'home-login': "url('/src/assets/images/bg-login.jpg')",
+      profile: "url('/src/assets/images/bg-profile.jpg')",
       'dnd-logo': "url('/src/assets/images/dnd-logo.png')"
     },
     fontFamily: {

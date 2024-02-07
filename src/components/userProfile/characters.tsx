@@ -1,32 +1,22 @@
 //import * as style from '../../assets/styles/components/homeForms/homeLogo.json';
 
 import { useEffect } from 'react';
-import characterServices from '../../services/characterServices';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
-import { setCharacters } from '../../reducers/charactersReducer';
+import { loadCharacters } from '../../reducers/charactersReducer';
+import { getStorage } from '../../utils/functions';
 
 export const Characters = () => {
   const dispatch = useAppDispatch();
   const characters: any[] = useAppSelector((state) => {
     return state.characters;
   });
-  const session = useAppSelector((state) => {
-    return state.session;
-  });
 
   useEffect(() => {
     try {
-      // start placeholder
-      if (characters.length !== 0) return;
-      characterServices.getAll(session.userId, session.token).then((data) => {
-        console.log(data);
-        dispatch(setCharacters(data));
-      });
+      const session = getStorage();
+      dispatch(loadCharacters(session));
     } catch (err) {
       console.log(err);
-      // navigate to own profile or login page
-    } finally {
-      // Stop placeholder
     }
   });
 
@@ -36,31 +26,37 @@ export const Characters = () => {
 
   return (
     <section
-      className={`flex flex-col items-center justify-around mt-10 space-y-10 w-full h-auto`}
+      className={`flex flex-col items-center justify-around mt-10 space-y-1 w-full h-auto`}
     >
-      <h2 className={`font-black text-xl`}>Characters</h2>
+      <h2
+        className={`font-black w-[70%] text-center border-2 border-black text-2xl text-violet-900 bg-slate-400 bg-opacity-60`}
+      >
+        Characters
+      </h2>
       <table
-        className={`flex flex-col items-center justify-between w-[70%]  space-y-1`}
+        className={`flex flex-col items-center justify-start w-[70%]  space-y-1 bg-slate-400  h-80 border-black border-solid border-2 bg-opacity-60`}
       >
         <thead className={`flex flex-col justify-center items-center w-full`}>
-          <tr className={`flex justify-center w-full bg-slate-600`}>
-            <th className="w-[12%] text-center">ID</th>
-            <th className="w-[12%] text-center">Name</th>
-            <th className="w-[12%] text-center">Race</th>
-            <th className="w-[12%] text-center">Class</th>
-            <th className="w-[12%] text-center">Level</th>
-            <th className="w-[12%] text-center">Edit</th>
-            <th className="w-[12%] text-center">Download</th>
-            <th className="w-[12%] text-center" />
+          <tr
+            className={`flex justify-center w-full pt-1 bg-slate-400 bg-opacity-60`}
+          >
+            <th className="w-[12%] text-center text-purple-900">ID</th>
+            <th className="w-[12%] text-center text-purple-900">Name</th>
+            <th className="w-[12%] text-center text-purple-900">Race</th>
+            <th className="w-[12%] text-center text-purple-900">Class</th>
+            <th className="w-[12%] text-center text-purple-900">Level</th>
+            <th className="w-[12%] text-center text-purple-900">Edit</th>
+            <th className="w-[12%] text-center text-purple-900">Download</th>
+            <th className="w-[12%] text-center text-purple-900">Delete</th>
           </tr>
         </thead>
         <tbody
-          className={`flex flex-col justify-center items-center w-full space-y-1`}
+          className={`flex flex-col justify-start items-center w-full space-y-1 overflow-y-auto pl-1 h-full table-scroll bg-slate-300 bg-opacity-60`}
         >
           {characters.map((character) => {
             return (
               <tr
-                className={`flex justify-center w-full bg-slate-200`}
+                className={`flex justify-center w-full bg-slate-200 bg-opacity-60`}
                 key={character.id}
               >
                 <td className="w-[12%] text-center text-sm">
@@ -86,7 +82,7 @@ export const Characters = () => {
                 <td className="w-[12%] text-center text-sm">
                   {' '}
                   <button
-                    className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
+                    className={`text-center font-semibold text-blue-500 hover:text-sky-500`}
                     onClick={() => {}}
                   >
                     Link
@@ -95,7 +91,7 @@ export const Characters = () => {
                 <td className="w-[12%] text-center text-sm">
                   {' '}
                   <button
-                    className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
+                    className={`text-center font-semibold text-blue-500 hover:text-sky-500`}
                     onClick={() => {}}
                   >
                     PDF
@@ -104,10 +100,10 @@ export const Characters = () => {
                 <td className="w-[12%] text-center text-sm">
                   {' '}
                   <button
-                    className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
+                    className={`text-center text-red-700 font-black hover:text-red-500`}
                     onClick={() => {}}
                   >
-                    Delete
+                    X
                   </button>
                 </td>
               </tr>

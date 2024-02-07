@@ -1,4 +1,6 @@
 import { Dispatch, createSlice } from '@reduxjs/toolkit';
+import { iCampaign } from '../utils/interfaces/iCampaign';
+import campaignServices from '../services/campaignServices';
 
 const campaignSlice = createSlice({
   name: 'campaign',
@@ -12,7 +14,14 @@ const campaignSlice = createSlice({
 
 export const { updateCampaigns } = campaignSlice.actions;
 
-export const setCampaigns = (campaigns: any[]) => {
+export const loadCampaigns = (session: any) => {
+  return async (dispatch: Dispatch) => {
+    const data = await campaignServices.getAll(session.userId, session.token);
+    dispatch(updateCampaigns(data));
+  };
+};
+
+export const setCampaigns = (campaigns: iCampaign[]) => {
   return (dispatch: Dispatch) => {
     dispatch(updateCampaigns(campaigns));
   };
