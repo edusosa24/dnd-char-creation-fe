@@ -27,4 +27,12 @@ export const setCampaigns = (campaigns: iCampaign[]) => {
   };
 };
 
+export const deleteCampaign = (campaignId: string, session: any) => {
+  return async (dispatch: Dispatch) => {
+    await campaignServices.deleteOne(campaignId, session.userId, session.token);
+    const data = await campaignServices.getAll(session.userId, session.token);
+    dispatch(updateCampaigns(data));
+  };
+};
+
 export default campaignSlice.reducer;

@@ -23,6 +23,23 @@ const getAll = async (userId: string, token: string) => {
   return response.data;
 };
 
+const deleteOne = async (
+  characterId: string,
+  userId: string,
+  token: string
+) => {
+  const response = await axios
+    .delete(`${baseUrl}/user/${userId}/character/${characterId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
+  return response.status;
+};
+
 /*
 const postOne = async (userData: iUser) => {
   const response = await axios.post(`${baseUrl}`, userData).catch((err) => {
@@ -31,11 +48,6 @@ const postOne = async (userData: iUser) => {
   return response.data;
 };
 
-const deleteOne = async (userId: string) => {
-  const response = await axios.delete(`${baseUrl}/${userId}`).catch((err) => {
-    throw err;
-  });
-  return response.status;
-};
+
 */
-export default { getOne, getAll };
+export default { getOne, getAll, deleteOne };

@@ -1,21 +1,19 @@
 import { SignUp } from '../components/homeForms/signUp';
 import * as style from '../assets/styles/pages/home.json';
 import { HomeLogo } from '../components/homeForms/homeLogo';
-import { useAppSelector } from '../utils/hooks';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { getStorage } from '../utils/functions';
 
 export const SignUpPage = () => {
   const navigate = useNavigate();
-  const session = useAppSelector((state) => {
-    return state.session;
-  });
 
   useEffect(() => {
-    if (session.userId !== '') {
+    const session = getStorage();
+    if (session && session.username !== '') {
       navigate(`/profile/${session.username}`);
     }
-  });
+  }, [navigate]);
 
   return (
     <div

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { SignUpPage } from '../pages/signUp';
 import { LoginPage } from '../pages/login';
 import { ProfilePage } from '../pages/profile';
@@ -9,6 +9,7 @@ import { getStorage } from '../utils/functions';
 import { useAppDispatch } from '../utils/hooks';
 
 const App = () => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const App = () => {
     if (userData) {
       dispatch(setLogin(userData));
     }
-  });
+  }, [dispatch, navigate]);
 
   return (
     <>

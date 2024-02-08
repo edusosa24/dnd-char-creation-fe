@@ -26,4 +26,16 @@ export const setCharacters = (characters: any[]) => {
   };
 };
 
+export const deleteCharacter = (characterId: string, session: any) => {
+  return async (dispatch: Dispatch) => {
+    await characterServices.deleteOne(
+      characterId,
+      session.userId,
+      session.token
+    );
+    const data = await characterServices.getAll(session.userId, session.token);
+    dispatch(updateCharacters(data));
+  };
+};
+
 export default characterSlice.reducer;

@@ -1,8 +1,8 @@
 //import * as style from '../../assets/styles/components/homeForms/homeLogo.json';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
-import { loadCampaigns } from '../../reducers/campaignsReducer';
+import { deleteCampaign, loadCampaigns } from '../../reducers/campaignsReducer';
 import { iCampaign } from '../../utils/interfaces/iCampaign';
 import { getStorage } from '../../utils/functions';
 
@@ -11,6 +11,7 @@ export const Campaigns = () => {
   const campaigns: iCampaign[] = useAppSelector((state) => {
     return state.campaigns;
   });
+  const [nameFilter, setNameFilter] = useState('');
 
   useEffect(() => {
     try {
@@ -19,17 +20,44 @@ export const Campaigns = () => {
     } catch (err) {
       console.log(err);
     }
-  });
+  }, [dispatch]);
+
+  const handleNameFilter = (event: any) => {
+    event.preventDefault();
+    setNameFilter(event.target.value);
+  };
+
+  const handleDelete = async (campaign: any) => {
+    try {
+      if (
+        confirm(`Are you sure you want to delete campaign: ${campaign.name}`)
+      ) {
+        const session = getStorage();
+        dispatch(deleteCampaign(campaign.id, session));
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <section
       className={`flex flex-col items-center justify-around space-y-1 w-full h-auto`}
     >
-      <h2
-        className={`font-black w-[70%] text-center border-2 border-black text-2xl text-violet-900 bg-slate-400 bg-opacity-60`}
+      <div
+        className={`flex justify-between items-center px-5 w-[70%] border-2 border-black bg-slate-400 bg-opacity-60 rounded-sm`}
       >
-        Campaigns
-      </h2>
+        <h2 className={`font-black  text-center  text-2xl text-violet-900 `}>
+          Campaigns
+        </h2>
+        <div className={`flex items-center space-x-2`}>
+          <p className={`font-bold text-md`}>search by name:</p>
+          <input
+            className={`rounded-sm opacity-60 border-black border-2 px-1 self-center outline-none focus:border-gray-500`}
+            onChange={handleNameFilter}
+          ></input>
+        </div>
+      </div>
       <table
         className={`flex flex-col items-center justify-start w-[70%]  space-y-1 bg-slate-400  h-80 border-black border-solid border-2 bg-opacity-60`}
       >
@@ -46,35 +74,41 @@ export const Campaigns = () => {
         <tbody
           className={`flex flex-col justify-start items-center w-full space-y-1 overflow-y-auto h-full table-scroll`}
         >
-          {campaigns.map((campaign) => {
-            return (
-              <tr
-                className={`flex justify-center w-full bg-slate-200 bg-opacity-60`}
-                key={campaign.id}
-              >
-                <td className="w-[35%] text-center text-sm">{campaign.name}</td>
-                <td className="w-[35%] text-center text-sm">
-                  {campaign.characters.length}
-                </td>
-                <td className="w-[15%] text-center text-sm">
-                  <button
-                    className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
-                    onClick={() => {}}
-                  >
-                    Link
-                  </button>
-                </td>
-                <td className="w-[15%] text-center text-sm">
-                  <button
-                    className={`text-center text-red-700 font-black hover:text-red-500`}
-                    onClick={() => {}}
-                  >
-                    X
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
+          {campaigns
+            .filter((campaign) => campaign.name?.includes(nameFilter))
+            .map((campaign) => {
+              return (
+                <tr
+                  className={`flex justify-center w-full bg-slate-200 bg-opacity-60`}
+                  key={campaign.id}
+                >
+                  <td className="w-[35%] text-center text-sm">
+                    {campaign.name}
+                  </td>
+                  <td className="w-[35%] text-center text-sm">
+                    {campaign.characters.length}
+                  </td>
+                  <td className="w-[15%] text-center text-sm">
+                    <button
+                      className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
+                      onClick={() => {}}
+                    >
+                      Link
+                    </button>
+                  </td>
+                  <td className="w-[15%] text-center text-sm">
+                    <button
+                      className={`text-center text-red-700 font-black hover:text-red-500`}
+                      onClick={() => {
+                        handleDelete(campaign);
+                      }}
+                    >
+                      X
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </section>
