@@ -5,7 +5,8 @@ export default {
     screens: {
       md: '768px',
       xl: '1280px',
-      '2xl': '1536px'
+      '2xl': '1536px',
+      '3xl': '1840px'
     },
     backgroundImage: {
       'home-signup': "url('/src/assets/images/bg-signup.jpg')",

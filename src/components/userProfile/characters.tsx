@@ -53,9 +53,9 @@ export const Characters = () => {
       className={`flex flex-col items-center justify-around mt-10 space-y-1 w-full h-auto`}
     >
       <div
-        className={`flex justify-between items-center px-5 w-[70%] border-2 border-black bg-slate-400 bg-opacity-60 rounded-sm`}
+        className={`flex justify-between items-center px-5 w-[75%] border-2 border-black bg-slate-400 bg-opacity-60 rounded-sm`}
       >
-        <h2 className={`font-black  text-center  text-2xl text-violet-900 `}>
+        <h2 className={`font-black  text-center  text-2xl text-red-900 `}>
           Characters
         </h2>
         <div className={`flex items-center space-x-2`}>
@@ -68,34 +68,50 @@ export const Characters = () => {
       </div>
 
       <table
-        className={`flex flex-col items-center justify-start w-[70%]  space-y-1 bg-slate-400  h-80 border-black border-solid border-2 bg-opacity-60`}
+        className={`flex 2xl:flex-col 2xl:items-center justify-start w-[75%]  space-y-1 bg-slate-400  h-80 border-black border-solid border-2 bg-opacity-60`}
       >
-        <thead className={`flex flex-col justify-center items-center w-full`}>
+        <thead
+          className={`flex flex-col justify-center items-center w-[20%] 2xl:w-full`}
+        >
           <tr
-            className={`flex justify-center w-full pt-1 bg-slate-400 bg-opacity-60`}
+            className={`flex flex-col 2xl:flex-row 2xl:h-full h-[98%] justify-around w-full items-start 2xl:justify-center 2xl:pl-1 pt-1 bg-slate-400 bg-opacity-60`}
           >
-            <th className="w-[12%] text-center text-purple-900">ID</th>
-            <th className="w-[12%] text-center text-purple-900">Name</th>
-            <th className="w-[12%] text-center text-purple-900">Race</th>
-            <th className="w-[12%] text-center text-purple-900">Class</th>
-            <th className="w-[12%] text-center text-purple-900">Level</th>
-            <th className="w-[12%] text-center text-purple-900">Edit</th>
-            <th className="w-[12%] text-center text-purple-900">Download</th>
-            <th className="w-[12%] text-center text-purple-900">Delete</th>
+            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+              ID
+            </th>
+            <th className="2xl:w-[20%] text-center text-red-800 pl-2 2xl:pl-0">
+              Name
+            </th>
+            <th className="2xl:w-[20%] text-center text-red-800 pl-2 2xl:pl-0">
+              Class
+            </th>
+            <th className="2xl:w-[20%] text-center text-red-800 pl-2 2xl:pl-0">
+              Race
+            </th>
+            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+              Level
+            </th>
+            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+              Edit
+            </th>
+            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+              Download
+            </th>
+            <th className="2xl:w-[8%] text-center text-red-800 pl-1">Delete</th>
           </tr>
         </thead>
         <tbody
-          className={`flex flex-col justify-start items-center w-full space-y-1 overflow-y-auto pl-1 h-full table-scroll bg-slate-300 bg-opacity-60`}
+          className={`flex 2xl:flex-col justify-start items-center space-x-2 2xl:space-x-0 2xl:space-y-1 overflow-x-auto overflow-y-hidden 2xl:overflow-x-hidden 2xl:overflow-y-auto pl-1 h-[98%] 2xl:h-full table-scroll w-[80%] 2xl:w-full bg-slate-300 bg-opacity-60`}
         >
           {characters
             .filter((character) => character.general.name?.includes(nameFilter))
             .map((character) => {
               return (
                 <tr
-                  className={`flex justify-center w-full bg-slate-200 bg-opacity-60`}
+                  className={`flex h-[98%] pl-1 pr-1 2xl:pr-0 2xl:pl-0 justify-around items-center 2xl:h-[90%] flex-col 2xl:justify-center 2xl:w-full bg-slate-200 bg-opacity-60 2xl:flex-row`}
                   key={character.id}
                 >
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     <button
                       className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
                       onClick={() => handleCopy(character.id)}
@@ -103,19 +119,19 @@ export const Characters = () => {
                       Copy
                     </button>
                   </td>
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[20%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     {character.general.name}
                   </td>
-                  <td className="w-[12%] text-center text-sm">
-                    {character.general.race}
-                  </td>
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[20%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     {character.general.class}
                   </td>
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[20%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                    {character.general.race}
+                  </td>
+                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     {character.general.level}
                   </td>
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     {' '}
                     <button
                       className={`text-center font-semibold text-blue-500 hover:text-sky-500`}
@@ -124,7 +140,7 @@ export const Characters = () => {
                       Link
                     </button>
                   </td>
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     {' '}
                     <button
                       className={`text-center font-semibold text-blue-500 hover:text-sky-500`}
@@ -133,7 +149,7 @@ export const Characters = () => {
                       PDF
                     </button>
                   </td>
-                  <td className="w-[12%] text-center text-sm">
+                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
                     {' '}
                     <button
                       className={`text-center text-red-700 font-black hover:text-red-500`}
