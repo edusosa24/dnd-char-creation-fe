@@ -1,5 +1,3 @@
-//import * as style from '../../assets/styles/components/homeForms/homeLogo.json';
-
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 import {
@@ -7,6 +5,7 @@ import {
   loadCharacters
 } from '../../reducers/charactersReducer';
 import { getStorage } from '../../utils/functions';
+import * as style from '../../assets/styles/components/profileTables/profileTables.json';
 
 export const Characters = () => {
   const dispatch = useAppDispatch();
@@ -49,110 +48,109 @@ export const Characters = () => {
   };
 
   return (
-    <section
-      className={`flex flex-col items-center justify-around mt-10 space-y-1 w-full h-auto`}
-    >
-      <div
-        className={`flex justify-between items-center px-5 w-[75%] border-2 border-black bg-slate-400 bg-opacity-60 rounded-sm`}
-      >
-        <h2 className={`font-black  text-center  text-2xl text-red-900 `}>
-          Characters
-        </h2>
-        <div className={`flex items-center space-x-2`}>
+    <section className={`${style.def.component}`}>
+      <div className={`${style.def.tableTop} ${style.md.tableTop}`}>
+        <h2 className={`${style.def.title}`}>Characters</h2>
+        <div className={`${style.def.searchBar} ${style.md.searchBar}`}>
           <p className={`font-bold text-md`}>search by name:</p>
           <input
-            className={`rounded-sm opacity-60 border-black border-2 px-1 self-center outline-none focus:border-gray-500`}
+            className={`${style.def.search}`}
             onChange={handleNameFilter}
           ></input>
         </div>
       </div>
-
-      <table
-        className={`flex 2xl:flex-col 2xl:items-center justify-start w-[75%]  space-y-1 bg-slate-400  h-80 border-black border-solid border-2 bg-opacity-60`}
-      >
+      <table className={`${style.def.table} ${style.xxl.table}`}>
         <thead
-          className={`flex flex-col justify-center items-center w-[20%] 2xl:w-full`}
+          className={`${style.def.thead} ${style.md.thead} ${style.xxl.thead}`}
         >
-          <tr
-            className={`flex flex-col 2xl:flex-row 2xl:h-full h-[98%] justify-around w-full items-start 2xl:justify-center 2xl:pl-1 pt-1 bg-slate-400 bg-opacity-60`}
-          >
-            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
-              ID
-            </th>
-            <th className="2xl:w-[20%] text-center text-red-800 pl-2 2xl:pl-0">
+          <tr className={`${style.def.theadRow} ${style.xxl.theadRow}`}>
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>ID</th>
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[20%]`}>
               Name
             </th>
-            <th className="2xl:w-[20%] text-center text-red-800 pl-2 2xl:pl-0">
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[20%]`}>
               Class
             </th>
-            <th className="2xl:w-[20%] text-center text-red-800 pl-2 2xl:pl-0">
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[20%]`}>
               Race
             </th>
-            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>
               Level
             </th>
-            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>
               Edit
             </th>
-            <th className="2xl:w-[8%] text-center text-red-800 pl-2 2xl:pl-0">
+            <th
+              className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%] pr-1 2xl:pr-0`}
+            >
               Download
             </th>
-            <th className="2xl:w-[8%] text-center text-red-800 pl-1">Delete</th>
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>
+              Delete
+            </th>
           </tr>
         </thead>
-        <tbody
-          className={`flex 2xl:flex-col justify-start items-center space-x-2 2xl:space-x-0 2xl:space-y-1 overflow-x-auto overflow-y-hidden 2xl:overflow-x-hidden 2xl:overflow-y-auto pl-1 h-[98%] 2xl:h-full table-scroll w-[80%] 2xl:w-full bg-slate-300 bg-opacity-60`}
-        >
+        <tbody className={`${style.def.tbody} ${style.xxl.tbody}`}>
           {characters
             .filter((character) => character.general.name?.includes(nameFilter))
             .map((character) => {
               return (
                 <tr
-                  className={`flex h-[98%] pl-1 pr-1 2xl:pr-0 2xl:pl-0 justify-around items-center 2xl:h-[90%] flex-col 2xl:justify-center 2xl:w-full bg-slate-200 bg-opacity-60 2xl:flex-row`}
+                  className={`${style.def.tbodyRow} ${style.xxl.tbodyRow}`}
                   key={character.id}
                 >
-                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
+                  >
                     <button
-                      className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
+                      className={`${style.def.tdBtn}`}
                       onClick={() => handleCopy(character.id)}
                     >
                       Copy
                     </button>
                   </td>
-                  <td className="2xl:w-[20%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[20%]`}
+                  >
                     {character.general.name}
                   </td>
-                  <td className="2xl:w-[20%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[20%]`}
+                  >
                     {character.general.class}
                   </td>
-                  <td className="2xl:w-[20%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[20%]`}
+                  >
                     {character.general.race}
                   </td>
-                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
+                  >
                     {character.general.level}
                   </td>
-                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
+                  >
                     {' '}
-                    <button
-                      className={`text-center font-semibold text-blue-500 hover:text-sky-500`}
-                      onClick={() => {}}
-                    >
+                    <button className={`${style.def.tdBtn}`} onClick={() => {}}>
                       Link
                     </button>
                   </td>
-                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
+                  >
                     {' '}
-                    <button
-                      className={`text-center font-semibold text-blue-500 hover:text-sky-500`}
-                      onClick={() => {}}
-                    >
+                    <button className={`${style.def.tdBtn}`} onClick={() => {}}>
                       PDF
                     </button>
                   </td>
-                  <td className="2xl:w-[8%] w-full text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
+                  >
                     {' '}
                     <button
-                      className={`text-center text-red-700 font-black hover:text-red-500`}
+                      className={`${style.def.tdDel}`}
                       onClick={() => {
                         handleDelete(character);
                       }}

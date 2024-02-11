@@ -1,10 +1,9 @@
-//import * as style from '../../assets/styles/components/homeForms/homeLogo.json';
-
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 import { deleteCampaign, loadCampaigns } from '../../reducers/campaignsReducer';
 import { iCampaign } from '../../utils/interfaces/iCampaign';
 import { getStorage } from '../../utils/functions';
+import * as style from '../../assets/styles/components/profileTables/profileTables.json';
 
 export const Campaigns = () => {
   const dispatch = useAppDispatch();
@@ -41,64 +40,69 @@ export const Campaigns = () => {
   };
 
   return (
-    <section
-      className={`flex flex-col items-center justify-around space-y-1 w-full h-auto`}
-    >
-      <div
-        className={`flex justify-between items-center px-5 w-[75%] border-2 border-black bg-slate-400 bg-opacity-60 rounded-sm`}
-      >
-        <h2 className={`font-black  text-center  text-2xl text-red-900 `}>
-          Campaigns
-        </h2>
-        <div className={`flex items-center space-x-2`}>
+    <section className={`${style.def.component}`}>
+      <div className={`${style.def.tableTop} ${style.md.tableTop}`}>
+        <h2 className={`${style.def.title}`}>Campaigns</h2>
+        <div className={`${style.def.searchBar} ${style.md.searchBar}`}>
           <p className={`font-bold text-md`}>search by name:</p>
           <input
-            className={`rounded-sm opacity-60 border-black border-2 px-1 self-center outline-none focus:border-gray-500`}
+            className={`${style.def.search}`}
             onChange={handleNameFilter}
           ></input>
         </div>
       </div>
-      <table
-        className={`flex flex-col items-center justify-start w-[75%]  space-y-1 bg-slate-400  h-80 border-black border-solid border-2 bg-opacity-60`}
-      >
-        <thead className={`flex flex-col justify-center items-center w-full`}>
-          <tr
-            className={`flex justify-center w-full pt-1 bg-slate-400 bg-opacity-60`}
-          >
-            <th className="w-[35%] text-center text-red-800">Name</th>
-            <th className="w-[35%] text-center text-red-800">#Players</th>
-            <th className="w-[15%] text-center text-red-800">Edit</th>
-            <th className="w-[15%] text-center text-red-800">Delete</th>
+      <table className={`${style.def.table} ${style.xxl.table}`}>
+        <thead
+          className={`${style.def.thead} ${style.md.thead} ${style.xxl.thead}`}
+        >
+          <tr className={`${style.def.theadRow} ${style.xxl.theadRow}`}>
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[35%]`}>
+              Name
+            </th>
+            <th
+              className={`${style.def.th} ${style.xxl.th} 2xl:w-[35%] pr-1 2xl:pr-0`}
+            >
+              #Players
+            </th>
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[15%]`}>
+              Edit
+            </th>
+            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[15%]`}>
+              Delete
+            </th>
           </tr>
         </thead>
-        <tbody
-          className={`flex flex-col justify-start items-center w-full space-y-1 overflow-y-auto h-full table-scroll`}
-        >
+        <tbody className={`${style.def.tbody} ${style.xxl.tbody}`}>
           {campaigns
             .filter((campaign) => campaign.name?.includes(nameFilter))
             .map((campaign) => {
               return (
                 <tr
-                  className={`flex justify-center w-full bg-slate-200 bg-opacity-60`}
+                  className={`${style.def.tbodyRow} ${style.xxl.tbodyRow}`}
                   key={campaign.id}
                 >
-                  <td className="w-[35%] text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[35%]`}
+                  >
                     {campaign.name}
                   </td>
-                  <td className="w-[35%] text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[35%]`}
+                  >
                     {campaign.characters.length}
                   </td>
-                  <td className="w-[15%] text-center 2xl:text-xs 3xl:text-sm">
-                    <button
-                      className={`text-center font-semibold text-blue-500 hover:text-sky-500 active:text-sky-700`}
-                      onClick={() => {}}
-                    >
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[15%]`}
+                  >
+                    <button className={`${style.def.tdBtn}`} onClick={() => {}}>
                       Link
                     </button>
                   </td>
-                  <td className="w-[15%] text-center 2xl:text-xs 3xl:text-sm">
+                  <td
+                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[15%]`}
+                  >
                     <button
-                      className={`text-center text-red-700 font-black hover:text-red-500`}
+                      className={`${style.def.tdDel}`}
                       onClick={() => {
                         handleDelete(campaign);
                       }}
