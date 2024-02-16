@@ -6,6 +6,7 @@ import {
 } from '../../reducers/charactersReducer';
 import { getStorage } from '../../utils/functions';
 import * as style from '../../assets/styles/components/profileTables/profileTables.json';
+import { useNavigate } from 'react-router-dom';
 
 export const Characters = () => {
   const dispatch = useAppDispatch();
@@ -13,6 +14,7 @@ export const Characters = () => {
     return state.characters;
   });
   const [nameFilter, setNameFilter] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     try {
@@ -30,6 +32,10 @@ export const Characters = () => {
 
   const handleCopy = (id: string) => {
     navigator.clipboard.writeText(id);
+  };
+
+  const handleEdit = (id: string) => {
+    navigate(`./character/${id}`);
   };
 
   const handleDelete = async (character: any) => {
@@ -83,9 +89,6 @@ export const Characters = () => {
             <th
               className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%] pr-1 2xl:pr-0`}
             >
-              Download
-            </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>
               Delete
             </th>
           </tr>
@@ -133,16 +136,11 @@ export const Characters = () => {
                     className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
                   >
                     {' '}
-                    <button className={`${style.def.tdBtn}`} onClick={() => {}}>
+                    <button
+                      className={`${style.def.tdBtn}`}
+                      onClick={() => handleEdit(character.id)}
+                    >
                       Link
-                    </button>
-                  </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
-                  >
-                    {' '}
-                    <button className={`${style.def.tdBtn}`} onClick={() => {}}>
-                      PDF
                     </button>
                   </td>
                   <td

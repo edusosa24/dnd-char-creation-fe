@@ -1,6 +1,6 @@
 {
   "def": {
-    "component": "flex flex-col space-y-4 justify-between items-center bg-red-900 h-max w-full pt-14 pb-6",
+    "component": "flex flex-col space-y-4 justify-between items-center bg-red-900 h-max w-full pt-2 pb-6",
     "logo": "flex pt-10 h-full justify-center items-center space-x-4",
     "logoImg": "z-20 w-24 h-full mt-2 select-none",
     "logoText": "text-white text-center font-semibold text-xs select-none",

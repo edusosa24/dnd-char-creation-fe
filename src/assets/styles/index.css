@@ -26,6 +26,14 @@ body,
   max-width: 2560px;
 }
 
+@layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 .table-scroll::-webkit-scrollbar {
   width: 4px;
   height: 3px;

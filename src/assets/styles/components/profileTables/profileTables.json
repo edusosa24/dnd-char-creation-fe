@@ -26,7 +26,7 @@
     "theadRow": "2xl:flex-row 2xl:h-full 2xl:justify-center 2xl:pl-1",
     "th": "2xl:pl-0",
     "tbody": "2xl:flex-col 2xl:space-x-0 2xl:space-y-1 2xl:overflow-x-hidden 2xl:overflow-y-auto 2xl:h-full 2xl:w-full",
-    "tbodyRow": "2xl:pr-0 2xl:pl-0 2xl:h-[90%] 2xl:justify-center 2xl:w-full 2xl:flex-row",
+    "tbodyRow": "2xl:pr-0 2xl:pl-0 2xl:h-max 2xl:py-1 2xl:justify-center 2xl:w-full 2xl:flex-row",
     "td": "2xl:text-xs"
   },
   "xxxl": {
