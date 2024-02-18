@@ -1,7 +1,7 @@
 {
   "component": "flex flex-col items-center bg-white p-2 w-[80%]",
   "form": "flex flex-col items-center gap-y-16 p-3",
-  "sectionTitle": "font-bold text-2xl",
+  "sectionTitle": "font-bold text-2xl text-center w-full",
   "nameFieldSet": "flex flex-col w-full space-x-2 items-center justify-start",
   "nameInput": "border-2 border-black border-solid w-[80%] p-1 md:w-[50%]",
   "generalSection": "flex w-full flex-wrap flex-col items-center gap-y-8 justify-self-center md:flex-row md:items-start md:justify-around",
@@ -29,5 +29,13 @@
   "skillsLabel": "text-sm font-semibold text-nowrap w-[11%]",
   "skillsInput": "border-2 border-black border-solid w-12 h-8 rounded-md text-center p-1 font-normal text-xl md:w-[25%]",
   "skillsCheckBox": "border-2 border-black border-solid w-[10%] h-4 text-center p-1 font-normal text-xl",
-  "subTitle": "font-black text-xl w-full text-center"
+  "subTitle": "font-black text-xl w-full text-center",
+
+  "eAndMSection": "flex w-full flex-wrap flex-col items-center h-max gap-y-8 justify-self-center relative md:items-start md:justify-around md:flex-row",
+  "moneyDiv": "flex flex-wrap justify-center items-center self-center gap-y-2 gap-x-2 w-full p-1 bg-slate-300 rounded-xl md:w-[25%] md:flex-col",
+  "moneyFieldSet": "flex items-center justify-start gap-x-2",
+  "moneyLabel": "font-bold text-nowrap text-base w-[20%]",
+  "moneyInput": "border-2 border-black border-solid w-12 h-9 rounded-xl text-center p-1 font-medium text-sm",
+  "equipmentFieldSet": "flex justify-center h-96 w-full p-1 md:w-[75%]",
+  "equipmentTextArea": "border-2 border-solid border-black rounded-md resize-none min-h-full overflow-y-auto table-scroll w-full p-2 font-normal text-wrap text-sm md:text-base md:w-[80%]"
 }
