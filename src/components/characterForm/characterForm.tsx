@@ -46,7 +46,7 @@ export const CharacterForm = () => {
         onSubmit={handleSubmit(updateCharacter)}
         className={`${style.form}`}
       >
-        <h3 className={`${style.sectionTitle}`}>General info & Appeareance:</h3>
+        <h2 className={`${style.sectionTitle}`}>General info & Appeareance:</h2>
         <fieldset className={`${style.nameFieldSet}`}>
           <label>Name</label>
           <input className={`${style.nameInput}`} maxLength={50} />
@@ -121,10 +121,10 @@ export const CharacterForm = () => {
             </fieldset>
           </div>
         </section>
-        <h3 className={`${style.sectionTitle}`}>Ability Score:</h3>
+        <h2 className={`${style.sectionTitle}`}>Ability Score:</h2>
         <section className={`${style.aScoreSection}`}>
           <div className={`${style.aScoreStats}`}>
-            <h3 className={`${style.subTitle}`}>STATS</h3>
+            <h4 className={`${style.subTitle}`}>STATS</h4>
             <div className={`${style.statsDiv}`}>
               <fieldset className={`${style.statsFieldSet}`}>
                 <label className={`${style.statsLabel}`}>STR</label>
@@ -262,40 +262,9 @@ export const CharacterForm = () => {
                 onChange={(e) => limitNumber(99, -99, e)}
               />
             </fieldset>
-            <fieldset className={`${style.aSOthersFieldSet}`}>
-              <label className={`${style.aSOthersLabel}`}>Armor Class</label>
-              <input
-                className={`${style.aSOthersInput}`}
-                type="text"
-                inputMode="numeric"
-                onInput={(e) => limitInput(e)}
-                onChange={(e) => limitNumber(99, -99, e)}
-              />
-            </fieldset>
-            <fieldset className={`${style.aSOthersFieldSet}`}>
-              <label className={`${style.aSOthersLabel}`}>Initiative</label>
-              <input
-                className={`${style.aSOthersInput}`}
-                type="text"
-                inputMode="numeric"
-                onInput={(e) => limitInput(e)}
-                onChange={(e) => limitNumber(99, -99, e)}
-              />
-            </fieldset>
-            <fieldset className={`${style.aSOthersFieldSet}`}>
-              <label className={`${style.aSOthersLabel}`}>Speed</label>
-              <input
-                className={`${style.aSOthersInput}`}
-                type="text"
-                inputMode="numeric"
-                onInput={(e) => limitInput(e)}
-                onChange={(e) => limitNumber(99, -99, e)}
-              />
-            </fieldset>
           </div>
-
           <div className={`${style.aScoreSaves}`}>
-            <h3 className={`${style.subTitle}`}>STATS SAVES</h3>
+            <h4 className={`${style.subTitle}`}>STATS SAVES</h4>
             <fieldset className={`${style.statSavesFieldSet}`}>
               <input type="checkbox" className={`${style.statSavesCheckBox}`} />
               <input
@@ -365,7 +334,7 @@ export const CharacterForm = () => {
           </div>
 
           <div className={`${style.aScoreSkills}`}>
-            <h3 className={`${style.subTitle}`}>SKILLS</h3>
+            <h4 className={`${style.subTitle}`}>SKILLS</h4>
             <fieldset className={`${style.skillsFieldSet}`}>
               <input type="checkbox" className={`${style.skillsCheckBox}`} />
               <input
@@ -655,7 +624,7 @@ export const CharacterForm = () => {
           </div>
         </section>
         <section className={`${style.eAndMSection}`}>
-          <h3 className={`${style.sectionTitle}`}>Equipment & Money:</h3>
+          <h2 className={`${style.sectionTitle}`}>Equipment & Money:</h2>
           <div className={`${style.moneyDiv}`}>
             <fieldset className={`${style.moneyFieldSet}`}>
               <label className={`${style.moneyLabel}`}>CP</label>
@@ -712,11 +681,205 @@ export const CharacterForm = () => {
             <textarea
               className={`${style.equipmentTextArea}`}
               maxLength={1000}
-              onChange={(e) => {
-                console.log(e.target.value);
-              }}
             />
           </fieldset>
+        </section>
+        <section className={`${style.combatSection}`}>
+          <h2 className={`${style.sectionTitle}`}>Combat:</h2>
+          <div className={`${style.combatOthersDiv}`}>
+            <fieldset className={`${style.combatOthersFieldSet}`}>
+              <label className={`${style.combatOthersLabel}`}>
+                Armor Class
+              </label>
+              <input
+                className={`${style.combatOthersInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(99, -99, e)}
+              />
+            </fieldset>
+            <fieldset className={`${style.combatOthersFieldSet}`}>
+              <label className={`${style.combatOthersLabel}`}>Initiative</label>
+              <input
+                className={`${style.combatOthersInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(99, -99, e)}
+              />
+            </fieldset>
+            <fieldset className={`${style.combatOthersFieldSet}`}>
+              <label className={`${style.combatOthersLabel}`}>Speed</label>
+              <input
+                className={`${style.combatOthersInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(99, -99, e)}
+              />
+            </fieldset>
+          </div>
+          <div className={`${style.combatOthersDiv}`}>
+            <h4 className={`${style.subTitle}`}>Hit Points:</h4>
+            <fieldset className={`${style.combatHPFieldSet}`}>
+              <label className={`${style.combatHPLabel}`}>Total:</label>
+              <input
+                className={`${style.combatHPInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(999, -999, e)}
+              />
+            </fieldset>
+            <fieldset className={`${style.combatHPFieldSet}`}>
+              <label className={`${style.combatHPLabel}`}>Current:</label>
+              <input
+                className={`${style.combatHPInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(999, -999, e)}
+              />
+            </fieldset>
+            <fieldset className={`${style.combatHPFieldSet}`}>
+              <label className={`${style.combatHPLabel}`}>Temporary:</label>
+              <input
+                className={`${style.combatHPInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(999, -999, e)}
+              />
+            </fieldset>
+          </div>
+          <div className={`${style.combatHDnDSDiv}`}>
+            <div className={`${style.combatHDDiv}`}>
+              <h4 className={`${style.subTitle} relative pb-10 left-[10%]`}>
+                Hit Dice:
+              </h4>
+              <fieldset className={`${style.combatHDFieldSet}`}>
+                <div className={`w-[20%] `} />
+                <input
+                  className={`${style.combatHDInput} rounded-t-full border-b-0`}
+                  type="text"
+                  maxLength={15}
+                />
+              </fieldset>
+              <fieldset className={`${style.combatHDFieldSet}`}>
+                <label className={`${style.combatHDLabel}`}>Total:</label>
+                <input
+                  className={`${style.combatHDInput} rounded-b-full`}
+                  type="text"
+                  maxLength={15}
+                />
+              </fieldset>
+            </div>
+            <div className={`w-[49%]`}>
+              <div className={`${style.combatDSDiv}`}>
+                <h4 className={`${style.subTitle} relative pb-10 left-[5%]`}>
+                  Death Saves:
+                </h4>
+                <fieldset className={`${style.combatDSFieldSet}`}>
+                  <label className={`${style.combatDSLabel}`}>Success:</label>
+                  <input
+                    className={`${style.combatDSInput} text-green-700`}
+                    type="number"
+                    min={0}
+                    max={3}
+                    onKeyDown={(e) => {
+                      e.key != 'ArrowDown' &&
+                        e.key != 'ArrowUp' &&
+                        e.preventDefault();
+                    }}
+                  />
+                </fieldset>
+                <fieldset className={`${style.combatDSFieldSet}`}>
+                  <label className={`${style.combatDSLabel}`}>Failure:</label>
+                  <input
+                    className={`${style.combatDSInput} text-red-700`}
+                    type="number"
+                    min={0}
+                    max={3}
+                    onKeyDown={(e) => {
+                      e.key != 'ArrowDown' &&
+                        e.key != 'ArrowUp' &&
+                        e.preventDefault();
+                    }}
+                  />
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div className={`${style.combatAnSDiv}`}>
+            <h4 className={`${style.subTitle} relative pb-10`}>
+              Attacks and spellcasting:
+            </h4>
+            <div className={`${style.combatAnSSubDiv} justify-center`}>
+              <span className={`${style.combatAnSSpan} w-[39%]`}>NAME</span>
+              <span className={`${style.combatAnSSpan} w-[19%]`}>
+                ATK BONUS
+              </span>
+              <span className={`${style.combatAnSSpan} w-[39%]`}>
+                DAMAGE / TYPE
+              </span>
+            </div>
+            <div className={`${style.combatAnSSubDiv} justify-between`}>
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[40%]`}
+                maxLength={22}
+              />
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[19%]`}
+                maxLength={11}
+              />
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[40%]`}
+                maxLength={22}
+              />
+            </div>
+            <div className={`${style.combatAnSSubDiv} justify-between`}>
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[40%]`}
+                maxLength={22}
+              />
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[19%]`}
+                maxLength={11}
+              />
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[40%]`}
+                maxLength={22}
+              />
+            </div>
+            <div className={`${style.combatAnSSubDiv} justify-between`}>
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[40%]`}
+                maxLength={22}
+              />
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[19%]`}
+                maxLength={11}
+              />
+              <input
+                type="text"
+                className={`${style.combatAnSInput} w-[40%]`}
+                maxLength={22}
+              />
+            </div>
+            <textarea
+              className={`${style.combatAnSTextArea}`}
+              maxLength={600}
+            />
+          </div>
         </section>
       </form>
     </div>
