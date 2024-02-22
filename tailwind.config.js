@@ -12,7 +12,8 @@ export default {
       'home-signup': "url('/src/assets/images/bg-signup.jpg')",
       'home-login': "url('/src/assets/images/bg-login.jpg')",
       profile: "url('/src/assets/images/bg-profile.jpg')",
-      'dnd-logo': "url('/src/assets/images/dnd-logo.png')"
+      'dnd-logo': "url('/src/assets/images/dnd-logo.png')",
+      'character-form': "url('/src/assets/images/bg-character-form.jpg')"
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

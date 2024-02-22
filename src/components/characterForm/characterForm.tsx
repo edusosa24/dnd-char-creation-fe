@@ -46,12 +46,14 @@ export const CharacterForm = () => {
         onSubmit={handleSubmit(updateCharacter)}
         className={`${style.form}`}
       >
-        <h2 className={`${style.sectionTitle}`}>General info & Appeareance:</h2>
-        <fieldset className={`${style.nameFieldSet}`}>
-          <label>Name</label>
-          <input className={`${style.nameInput}`} maxLength={50} />
-        </fieldset>
         <section className={`${style.generalSection}`}>
+          <h2 className={`${style.sectionTitle}`}>
+            General info & Appeareance:
+          </h2>
+          <fieldset className={`${style.nameFieldSet}`}>
+            <label>Name</label>
+            <input className={`${style.nameInput}`} maxLength={50} />
+          </fieldset>
           <div className={`${style.generalDiv}`}>
             <fieldset className={`${style.generalFieldSet}`}>
               <label>Class</label>
@@ -121,8 +123,8 @@ export const CharacterForm = () => {
             </fieldset>
           </div>
         </section>
-        <h2 className={`${style.sectionTitle}`}>Ability Score:</h2>
         <section className={`${style.aScoreSection}`}>
+          <h2 className={`${style.sectionTitle}`}>Ability Score:</h2>
           <div className={`${style.aScoreStats}`}>
             <h4 className={`${style.subTitle}`}>STATS</h4>
             <div className={`${style.statsDiv}`}>
@@ -879,6 +881,100 @@ export const CharacterForm = () => {
               className={`${style.combatAnSTextArea}`}
               maxLength={600}
             />
+          </div>
+        </section>
+        <section className={`${style.featuresSection}`}>
+          <h2 className={`${style.sectionTitle}`}>
+            Feature traits and other proficiencies:
+          </h2>
+          <div className={`${style.featuresDiv}`}>
+            <fieldset className={`${style.featuresFieldSet} h-40`}>
+              <label className={`${style.featuresLabel}`}>
+                PERSONALITY TRAITS
+              </label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-40`}>
+              <label className={`${style.featuresLabel}`}>IDEALS</label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-40`}>
+              <label className={`${style.featuresLabel}`}>BONDS</label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-40`}>
+              <label className={`${style.featuresLabel}`}>FLAWS</label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-96`}>
+              <label className={`${style.featuresLabel}`}>
+                OTHER PROFICIENCIES & LANGUAGES
+              </label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={1200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-96`}>
+              <label className={`${style.featuresLabel}`}>
+                FEATURES & TRAITS
+              </label>
+              <textarea
+                className={`${style.featuresTextArea} w-full`}
+                maxLength={1200}
+              />
+            </fieldset>
+          </div>
+        </section>
+        <section className={`${style.featuresSection}`}>
+          <h2 className={`${style.sectionTitle}`}>Backstory:</h2>
+          <div className={`${style.featuresDiv}`}>
+            <fieldset className={`${style.featuresFieldSet} h-96`}>
+              <label className={`${style.featuresLabel}`}>
+                ALLIES & ORGNAIZATIONS
+              </label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={1200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-96`}>
+              <label className={`${style.featuresLabel}`}>
+                ADDITIONAL FEATURES & TRAITS
+              </label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={1200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-96`}>
+              <label className={`${style.featuresLabel}`}>TREASURE</label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={1200}
+              />
+            </fieldset>
+            <fieldset className={`${style.featuresFieldSet} h-96`}>
+              <label className={`${style.featuresLabel}`}>
+                CHARACTER BACKSTORY
+              </label>
+              <textarea
+                className={`${style.featuresTextArea}`}
+                maxLength={1200}
+              />
+            </fieldset>
           </div>
         </section>
       </form>
