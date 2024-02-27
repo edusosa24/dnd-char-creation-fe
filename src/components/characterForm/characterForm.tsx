@@ -757,7 +757,7 @@ export const CharacterForm = () => {
           </div>
           <div className={`${style.combatHDnDSDiv}`}>
             <div className={`${style.combatHDDiv}`}>
-              <h4 className={`${style.subTitle} relative pb-10 left-[10%]`}>
+              <h4 className={`${style.subTitle} relative pb-10 md:left-[10%]`}>
                 Hit Dice:
               </h4>
               <fieldset className={`${style.combatHDFieldSet}`}>
@@ -975,6 +975,309 @@ export const CharacterForm = () => {
                 maxLength={1200}
               />
             </fieldset>
+          </div>
+        </section>
+        <section className={`${style.spellsSection}`}>
+          <h2 className={`${style.sectionTitle}`}>Spells:</h2>
+          <fieldset className={`${style.spellsOthersFieldSet}`}>
+            <label className={`${style.spellsOthersLabel}`}>
+              SPELLCASTING CLASS
+            </label>
+            <input
+              className={`${style.spellcastingClassInput}`}
+              type="text"
+              maxLength={30}
+            />
+          </fieldset>
+          <div className={`${style.spellsOthersDiv}`}>
+            <fieldset className={`${style.spellsOthersFieldSet}`}>
+              <label className={`${style.spellsOthersLabel}`}>
+                SPELLCASTING ABILITY
+              </label>
+              <input
+                className={`${style.spellsOthersInput}`}
+                type="text"
+                maxLength={5}
+              />
+            </fieldset>
+            <fieldset className={`${style.spellsOthersFieldSet}`}>
+              <label className={`${style.spellsOthersLabel}`}>
+                SPELL SAVE DC
+              </label>
+              <input
+                className={`${style.spellsOthersInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(9999, 0, e)}
+              />
+            </fieldset>
+            <fieldset className={`${style.spellsOthersFieldSet}`}>
+              <label className={`${style.spellsOthersLabel}`}>
+                SPELL ATTACK BONUS
+              </label>
+              <input
+                className={`${style.spellsOthersInput}`}
+                type="text"
+                inputMode="numeric"
+                onInput={(e) => limitInput(e)}
+                onChange={(e) => limitNumber(9999, 0, e)}
+              />
+            </fieldset>
+          </div>
+          <div className={`${style.spellsGrid}`}>
+            <div className={`xl:row-span-6 ${style.spellsDiv}`}>
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>0</p>
+                <p className={`${style.spellCantrip}`}>CANTRIPS</p>
+              </div>
+              <div className={`${style.spellCantripDiv}`}>
+                <input className={`${style.spellCantripName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-7 xl:col-start-1 xl:row-start-7 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>1</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-7 xl:col-start-1 xl:row-start-14 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>2</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-7 xl:col-start-2 xl:row-start-1 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>3</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-7 xl:col-start-2 xl:row-start-8 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>4</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(13, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-6 xl:col-start-2 xl:row-start-15 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>5</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(9, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(9, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-6 xl:col-start-3 xl:row-start-1 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>6</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(9, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(9, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-6 xl:col-start-3 xl:row-start-7 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>7</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(9, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(9, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-4 xl:col-start-3 xl:row-start-13 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>8</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(7, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(7, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
+            <div
+              className={`xl:row-span-4 xl:col-start-3 xl:row-start-17 ${style.spellsDiv}`}
+            >
+              <div className={`${style.spellSlotsDiv}`}>
+                <p className={`${style.spellsLevel}`}>9</p>
+                <input
+                  className={`${style.spellsTotal}`}
+                  placeholder="SLOTS TOTAL"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(7, 0, e)}
+                />
+                <input
+                  className={`${style.spellsExpended}`}
+                  placeholder="SLOTS EXPENDED"
+                  type="text"
+                  inputMode="numeric"
+                  onInput={(e) => limitInput(e)}
+                  onChange={(e) => limitNumber(7, 0, e)}
+                />
+              </div>
+              <div className={`${style.spellsKnownDiv}`}>
+                <input type="checkbox" className={`${style.spellCheck}`} />
+                <input className={`${style.spellName}`} maxLength={20} />
+              </div>
+            </div>
           </div>
         </section>
       </form>
