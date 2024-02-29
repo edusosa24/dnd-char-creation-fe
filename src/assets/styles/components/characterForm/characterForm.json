@@ -64,14 +64,12 @@
   "featuresFieldSet": "flex flex-col justify-center items-center w-full gap-y-2 md:w-[47%]",
   "featuresLabel": "pl-1 text-center text-xs text-nowrap md:text-sm 2xl:text-lg",
   "featuresTextArea": "w-full p-2 border-2 border-black rounded-sm resize-none text-wrap text-xs h-80 overflow-y-auto table-scroll md:h-96 md:text-sm xl:text-normal 2xl:text-lg",
-
   "spellsSection": "flex w-full flex-wrap flex-col bg-slate-100 bg-opacity-[60%] py-3 items-center gap-y-8 justify-self-center md:items-start md:justify-around md:flex-row",
   "spellsOthersDiv": "flex gap-y-4 w-full rounded-xl py-4 px-3 justify-center items-center gap-x-1 flex-wrap xl:justify-center",
   "spellsOthersFieldSet": "flex flex-col w-[49%] relative justify-center items-center gap-y-2 md:w-[15%]",
   "spellsOthersLabel": "text-xs text-center font-semibold text-nowrap xl:text-sm",
   "spellsOthersInput": "border-2 border-black w-20 h-10 rounded-md text-center p-1 font-normal text-xl",
   "spellcastingClassInput": "border-2 border-black h-10 rounded-md text-center p-1 font-normal text-xs w-56 md:text-lg md:w-96 xl:text-xl",
-
   "spellsGrid": "grid grid-rows-20 gap-3 xl:grid-cols-3",
   "spellsDiv": "flex flex-col items-center",
   "spellSlotsDiv": "flex w-[90%]",
