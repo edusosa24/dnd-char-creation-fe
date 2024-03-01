@@ -13,7 +13,9 @@ export const Backstory = () => {
             ALLIES & ORGNAIZATIONS
           </label>
           <textarea
-            {...register('alliesNOrg', { maxLength: 1200 })}
+            {...register('backstory.alliesAndOrganizations', {
+              maxLength: 1200
+            })}
             className={`${style.featuresTextArea}`}
             maxLength={1200}
           />
@@ -23,7 +25,9 @@ export const Backstory = () => {
             ADDITIONAL FEATURES & TRAITS
           </label>
           <textarea
-            {...register('addFeatsNTraits', { maxLength: 1200 })}
+            {...register('backstory.additionalFeaturesAndTraits', {
+              maxLength: 1200
+            })}
             className={`${style.featuresTextArea}`}
             maxLength={1200}
           />
@@ -31,7 +35,7 @@ export const Backstory = () => {
         <fieldset className={`${style.featuresFieldSet} h-96`}>
           <label className={`${style.featuresLabel}`}>TREASURE</label>
           <textarea
-            {...register('treasure', { maxLength: 1200 })}
+            {...register('backstory.treasure', { maxLength: 1200 })}
             className={`${style.featuresTextArea}`}
             maxLength={1200}
           />
@@ -41,7 +45,7 @@ export const Backstory = () => {
             CHARACTER BACKSTORY
           </label>
           <textarea
-            {...register('charBackstory', { maxLength: 1200 })}
+            {...register('backstory.backstory', { maxLength: 1200 })}
             className={`${style.featuresTextArea}`}
             maxLength={1200}
           />

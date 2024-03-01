@@ -32,7 +32,7 @@ export const AbilityScore = () => {
           <fieldset className={`${style.statsFieldSet}`}>
             <label className={`${style.statsLabel}`}>STR</label>
             <input
-              {...register('strVal', {
+              {...register('abilityScore.stats.strength.value', {
                 onChange: (e) => {
                   limitNumber(99, -99, e);
                 },
@@ -45,7 +45,7 @@ export const AbilityScore = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('strBon', {
+              {...register('abilityScore.stats.strength.bonus', {
                 onChange: (e) => {
                   limitNumber(9, -9, e);
                 },
@@ -61,7 +61,7 @@ export const AbilityScore = () => {
           <fieldset className={`${style.statsFieldSet}`}>
             <label className={`${style.statsLabel}`}>DEX</label>
             <input
-              {...register('dexVal', {
+              {...register('abilityScore.stats.dexterity.value', {
                 onChange: (e) => {
                   limitNumber(99, -99, e);
                 },
@@ -74,7 +74,7 @@ export const AbilityScore = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('dexBon', {
+              {...register('abilityScore.stats.dexterity.bonus', {
                 onChange: (e) => {
                   limitNumber(9, -9, e);
                 },
@@ -90,7 +90,7 @@ export const AbilityScore = () => {
           <fieldset className={`${style.statsFieldSet}`}>
             <label className={`${style.statsLabel}`}>CON</label>
             <input
-              {...register('conVal', {
+              {...register('abilityScore.stats.constitution.value', {
                 onChange: (e) => {
                   limitNumber(99, -99, e);
                 },
@@ -103,7 +103,7 @@ export const AbilityScore = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('conBon', {
+              {...register('abilityScore.stats.constitution.bonus', {
                 onChange: (e) => {
                   limitNumber(9, -9, e);
                 },
@@ -119,7 +119,7 @@ export const AbilityScore = () => {
           <fieldset className={`${style.statsFieldSet}`}>
             <label className={`${style.statsLabel}`}>INT</label>
             <input
-              {...register('intVal', {
+              {...register('abilityScore.stats.intelligence.value', {
                 onChange: (e) => {
                   limitNumber(99, -99, e);
                 },
@@ -132,7 +132,7 @@ export const AbilityScore = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('intBon', {
+              {...register('abilityScore.stats.intelligence.bonus', {
                 onChange: (e) => {
                   limitNumber(9, -9, e);
                 },
@@ -148,7 +148,7 @@ export const AbilityScore = () => {
           <fieldset className={`${style.statsFieldSet}`}>
             <label className={`${style.statsLabel}`}>WIS</label>
             <input
-              {...register('wisVal', {
+              {...register('abilityScore.stats.wisdom.value', {
                 onChange: (e) => {
                   limitNumber(99, -99, e);
                 },
@@ -161,7 +161,7 @@ export const AbilityScore = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('wisBon', {
+              {...register('abilityScore.stats.wisdom.bonus', {
                 onChange: (e) => {
                   limitNumber(9, -9, e);
                 },
@@ -177,7 +177,7 @@ export const AbilityScore = () => {
           <fieldset className={`${style.statsFieldSet}`}>
             <label className={`${style.statsLabel}`}>CHA</label>
             <input
-              {...register('chaVal', {
+              {...register('abilityScore.stats.charisma.value', {
                 onChange: (e) => {
                   limitNumber(99, -99, e);
                 },
@@ -190,7 +190,7 @@ export const AbilityScore = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('chaBon', {
+              {...register('abilityScore.stats.charisma.bonus', {
                 onChange: (e) => {
                   limitNumber(9, -9, e);
                 },
@@ -210,7 +210,7 @@ export const AbilityScore = () => {
         <fieldset className={`${style.aSOthersFieldSet}`}>
           <label className={`${style.aSOthersLabel}`}>Inspiration</label>
           <input
-            {...register('inspiration', {
+            {...register('abilityScore.inspiration', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -226,7 +226,7 @@ export const AbilityScore = () => {
         <fieldset className={`${style.aSOthersFieldSet}`}>
           <label className={`${style.aSOthersLabel}`}>Prof. bonus</label>
           <input
-            {...register('profBonus', {
+            {...register('abilityScore.proficiencyBonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -242,7 +242,7 @@ export const AbilityScore = () => {
         <fieldset className={`${style.aSOthersFieldSet}`}>
           <label className={`${style.aSOthersLabel}`}>Passive Wisdom</label>
           <input
-            {...register('passiveWis', {
+            {...register('abilityScore.passiveWisdom', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -260,12 +260,12 @@ export const AbilityScore = () => {
         <h4 className={`${style.subTitle}`}>STATS SAVES</h4>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
-            {...register('strSaveProf')}
+            {...register('abilityScore.savingThrows.strength.proficiency')}
             type="checkbox"
             className={`${style.statSavesCheckBox}`}
           />
           <input
-            {...register('strSaveVal', {
+            {...register('abilityScore.savingThrows.strength.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -281,12 +281,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
-            {...register('dexSaveProf')}
+            {...register('abilityScore.savingThrows.dexterity.proficiency')}
             type="checkbox"
             className={`${style.statSavesCheckBox}`}
           />
           <input
-            {...register('dexSaveVal', {
+            {...register('abilityScore.savingThrows.dexterity.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -302,12 +302,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
-            {...register('conSaveProf')}
+            {...register('abilityScore.savingThrows.constitution.proficiency')}
             type="checkbox"
             className={`${style.statSavesCheckBox}`}
           />
           <input
-            {...register('conSaveVal', {
+            {...register('abilityScore.savingThrows.constitution.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -323,12 +323,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
-            {...register('intSaveProf')}
+            {...register('abilityScore.savingThrows.intelligence.proficiency')}
             type="checkbox"
             className={`${style.statSavesCheckBox}`}
           />
           <input
-            {...register('intSaveVal', {
+            {...register('abilityScore.savingThrows.intelligence.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -344,12 +344,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
-            {...register('wisSaveProf')}
+            {...register('abilityScore.savingThrows.wisdom.proficiency')}
             type="checkbox"
             className={`${style.statSavesCheckBox}`}
           />
           <input
-            {...register('wisSaveVal', {
+            {...register('abilityScore.savingThrows.wisdom.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -365,12 +365,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
-            {...register('chaSaveProf')}
+            {...register('abilityScore.savingThrows.charisma.proficiency')}
             type="checkbox"
             className={`${style.statSavesCheckBox}`}
           />
           <input
-            {...register('chaSaveVal', {
+            {...register('abilityScore.savingThrows.charisma.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -390,12 +390,12 @@ export const AbilityScore = () => {
         <h4 className={`${style.subTitle}`}>SKILLS</h4>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('acroProf')}
+            {...register('abilityScore.skills.acrobatics.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('acroVal', {
+            {...register('abilityScore.skills.acrobatics.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -413,12 +413,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('animHandProf')}
+            {...register('abilityScore.skills.animalHandling.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('acroVal', {
+            {...register('abilityScore.skills.animalHandling.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -436,12 +436,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('arcanaProf')}
+            {...register('abilityScore.skills.arcana.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('arcanaVal', {
+            {...register('abilityScore.skills.arcana.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -459,12 +459,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('atheticsProf')}
+            {...register('abilityScore.skills.athletics.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('atheticsVal', {
+            {...register('abilityScore.skills.athletics.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -482,12 +482,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('deceptionProf')}
+            {...register('abilityScore.skills.deception.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('deceptionVal', {
+            {...register('abilityScore.skills.deception.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -505,12 +505,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('historyProf')}
+            {...register('abilityScore.skills.history.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('historyVal', {
+            {...register('abilityScore.skills.history.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -528,12 +528,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('insightProf')}
+            {...register('abilityScore.skills.insight.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('insightVal', {
+            {...register('abilityScore.skills.insight.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -551,12 +551,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('intimProf')}
+            {...register('abilityScore.skills.intimidation.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('intimVal', {
+            {...register('abilityScore.skills.intimidation.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -574,12 +574,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('investProf')}
+            {...register('abilityScore.skills.investigation.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('investVal', {
+            {...register('abilityScore.skills.investigation.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -597,12 +597,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('medicineProf')}
+            {...register('abilityScore.skills.medicine.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('medicineVal', {
+            {...register('abilityScore.skills.medicine.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -620,12 +620,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('natureProf')}
+            {...register('abilityScore.skills.nature.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('natureVal', {
+            {...register('abilityScore.skills.nature.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -643,12 +643,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('percepProf')}
+            {...register('abilityScore.skills.perception.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('percepVal', {
+            {...register('abilityScore.skills.perception.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -666,12 +666,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('perfProf')}
+            {...register('abilityScore.skills.performance.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('perfVal', {
+            {...register('abilityScore.skills.performance.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -689,12 +689,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('persProf')}
+            {...register('abilityScore.skills.persuasion.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('persVal', {
+            {...register('abilityScore.skills.persuasion.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -712,12 +712,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('religionProf')}
+            {...register('abilityScore.skills.religion.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('religionVal', {
+            {...register('abilityScore.skills.religion.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -735,12 +735,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('sleightProf')}
+            {...register('abilityScore.skills.sleightOfHand.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('sleightVal', {
+            {...register('abilityScore.skills.sleightOfHand.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -758,12 +758,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('stealthProf')}
+            {...register('abilityScore.skills.stealth.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('stealthVal', {
+            {...register('abilityScore.skills.stealth.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -781,12 +781,12 @@ export const AbilityScore = () => {
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
-            {...register('survProf')}
+            {...register('abilityScore.skills.survival.proficiency')}
             type="checkbox"
             className={`${style.skillsCheckBox}`}
           />
           <input
-            {...register('survVal', {
+            {...register('abilityScore.skills.survival.bonus', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },

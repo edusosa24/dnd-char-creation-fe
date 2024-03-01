@@ -8,16 +8,18 @@ export const Spells = () => {
     return [...Array(num)].map((_e, i) => {
       return (
         <div
-          key={`spell${i}Level${level}`}
+          key={`spells.slots.level${level}.${i}`}
           className={`${style.spellsKnownDiv}`}
         >
           <input
-            {...register(`spell${i}Level${level}Active`)}
+            {...register(`spells.slots.level${level}.known.${i}.prepared`)}
             type="checkbox"
             className={`${style.spellCheck}`}
           />
           <input
-            {...register(`spell${i}Level${level}Name`, { maxLength: 20 })}
+            {...register(`spells.slots.level${level}.known.${i}.name`, {
+              maxLength: 20
+            })}
             className={`${style.spellName}`}
             maxLength={20}
           />
@@ -53,7 +55,7 @@ export const Spells = () => {
           SPELLCASTING CLASS
         </label>
         <input
-          {...register('spellClass', { maxLength: 30 })}
+          {...register('spells.castingClass', { maxLength: 30 })}
           className={`${style.spellcastingClassInput}`}
           type="text"
           maxLength={30}
@@ -65,7 +67,7 @@ export const Spells = () => {
             SPELLCASTING ABILITY
           </label>
           <input
-            {...register('spellAbility', { maxLength: 5 })}
+            {...register('spells.castingAbility', { maxLength: 5 })}
             className={`${style.spellsOthersInput}`}
             type="text"
             maxLength={5}
@@ -74,7 +76,7 @@ export const Spells = () => {
         <fieldset className={`${style.spellsOthersFieldSet}`}>
           <label className={`${style.spellsOthersLabel}`}>SPELL SAVE DC</label>
           <input
-            {...register('spellSaveDc', {
+            {...register('spells.saveDice', {
               onChange: (e) => {
                 limitNumber(9999, 0, e);
               },
@@ -92,7 +94,7 @@ export const Spells = () => {
             SPELL ATTACK BONUS
           </label>
           <input
-            {...register('spellAtkBonus', {
+            {...register('spells.bonusAttack', {
               onChange: (e) => {
                 limitNumber(9999, 0, e);
               },
@@ -114,9 +116,12 @@ export const Spells = () => {
           </div>
           {[...Array(8)].map((_e, i) => {
             return (
-              <div key={`cantrip${i}`} className={`${style.spellCantripDiv}`}>
+              <div
+                key={`spells.cantrips.${i}`}
+                className={`${style.spellCantripDiv}`}
+              >
                 <input
-                  {...register(`cantrip${i}`, { maxLength: 20 })}
+                  {...register(`spells.cantrips.${i}`, { maxLength: 20 })}
                   className={`${style.spellCantripName}`}
                   maxLength={20}
                 />
@@ -131,7 +136,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>1</p>
             <input
-              {...register('slotsTotalLevel1', {
+              {...register('spells.slots.level1.total', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -145,7 +150,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel1', {
+              {...register('spells.slots.level1.expended', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -167,7 +172,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>2</p>
             <input
-              {...register('slotsTotalLevel2', {
+              {...register('spells.slots.level2.total', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -181,7 +186,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel2', {
+              {...register('spells.slots.level2.expended', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -203,7 +208,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>3</p>
             <input
-              {...register('slotsTotalLevel3', {
+              {...register('spells.slots.level3.total', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -217,7 +222,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel3', {
+              {...register('spells.slots.level3.expended', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -239,7 +244,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>4</p>
             <input
-              {...register('slotsTotalLevel4', {
+              {...register('spells.slots.level4.total', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -253,7 +258,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel4', {
+              {...register('spells.slots.level4.expended', {
                 onChange: (e) => {
                   limitNumber(13, 0, e);
                 },
@@ -275,7 +280,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>5</p>
             <input
-              {...register('slotsTotalLevel5', {
+              {...register('spells.slots.level5.total', {
                 onChange: (e) => {
                   limitNumber(9, 0, e);
                 },
@@ -289,7 +294,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel5', {
+              {...register('spells.slots.level5.expended', {
                 onChange: (e) => {
                   limitNumber(9, 0, e);
                 },
@@ -311,7 +316,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>6</p>
             <input
-              {...register('slotsTotalLevel6', {
+              {...register('spells.slots.level6.total', {
                 onChange: (e) => {
                   limitNumber(9, 0, e);
                 },
@@ -325,7 +330,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel6', {
+              {...register('spells.slots.level6.expended', {
                 onChange: (e) => {
                   limitNumber(9, 0, e);
                 },
@@ -347,7 +352,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>7</p>
             <input
-              {...register('slotsTotalLevel7', {
+              {...register('spells.slots.level7.total', {
                 onChange: (e) => {
                   limitNumber(9, 0, e);
                 },
@@ -361,7 +366,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel7', {
+              {...register('spells.slots.level7.expended', {
                 onChange: (e) => {
                   limitNumber(9, 0, e);
                 },
@@ -383,7 +388,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>8</p>
             <input
-              {...register('slotsTotalLevel8', {
+              {...register('spells.slots.level8.total', {
                 onChange: (e) => {
                   limitNumber(7, 0, e);
                 },
@@ -397,7 +402,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel8', {
+              {...register('spells.slots.level8.expended', {
                 onChange: (e) => {
                   limitNumber(7, 0, e);
                 },
@@ -419,7 +424,7 @@ export const Spells = () => {
           <div className={`${style.spellSlotsDiv}`}>
             <p className={`${style.spellsLevel}`}>9</p>
             <input
-              {...register('slotsTotalLevel9', {
+              {...register('spells.slots.level9.total', {
                 onChange: (e) => {
                   limitNumber(7, 0, e);
                 },
@@ -433,7 +438,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
             <input
-              {...register('slotsExpendedLevel9', {
+              {...register('spells.slots.level9.expended', {
                 onChange: (e) => {
                   limitNumber(7, 0, e);
                 },

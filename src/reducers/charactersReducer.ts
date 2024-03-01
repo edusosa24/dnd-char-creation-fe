@@ -20,6 +20,13 @@ export const loadCharacters = (session: any) => {
   };
 };
 
+export const loadOneCharacter = (characterId: string) => {
+  return async (dispatch: Dispatch) => {
+    const data = await characterServices.getOne(characterId);
+    dispatch(updateCharacters(data));
+  };
+};
+
 export const setCharacters = (characters: any[]) => {
   return (dispatch: Dispatch) => {
     dispatch(updateCharacters(characters));

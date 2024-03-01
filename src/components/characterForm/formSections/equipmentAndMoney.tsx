@@ -30,7 +30,7 @@ export const EquipmentAndMoney = () => {
         <fieldset className={`${style.moneyFieldSet}`}>
           <label className={`${style.moneyLabel}`}>CP</label>
           <input
-            {...register('cp', {
+            {...register('equipmentAndMoney.money.copper', {
               onChange: (e) => {
                 limitNumber(999, 0, e);
               },
@@ -46,7 +46,7 @@ export const EquipmentAndMoney = () => {
         <fieldset className={`${style.moneyFieldSet}`}>
           <label className={`${style.moneyLabel}`}>SP</label>
           <input
-            {...register('sp', {
+            {...register('equipmentAndMoney.money.silver', {
               onChange: (e) => {
                 limitNumber(999, 0, e);
               },
@@ -62,7 +62,7 @@ export const EquipmentAndMoney = () => {
         <fieldset className={`${style.moneyFieldSet}`}>
           <label className={`${style.moneyLabel}`}>EP</label>
           <input
-            {...register('ep', {
+            {...register('equipmentAndMoney.money.electrum', {
               onChange: (e) => {
                 limitNumber(999, 0, e);
               },
@@ -78,7 +78,7 @@ export const EquipmentAndMoney = () => {
         <fieldset className={`${style.moneyFieldSet}`}>
           <label className={`${style.moneyLabel}`}>GP</label>
           <input
-            {...register('gp', {
+            {...register('equipmentAndMoney.money.gold', {
               onChange: (e) => {
                 limitNumber(999, 0, e);
               },
@@ -94,7 +94,7 @@ export const EquipmentAndMoney = () => {
         <fieldset className={`${style.moneyFieldSet}`}>
           <label className={`${style.moneyLabel}`}>PP</label>
           <input
-            {...register('pp', {
+            {...register('equipmentAndMoney.money.platinum', {
               onChange: (e) => {
                 limitNumber(999, 0, e);
               },
@@ -110,7 +110,7 @@ export const EquipmentAndMoney = () => {
       </div>
       <fieldset className={`${style.equipmentFieldSet}`}>
         <textarea
-          {...register('equipment', { maxLength: 1000 })}
+          {...register('equipmentAndMoney.equipment', { maxLength: 1000 })}
           className={`${style.equipmentTextArea}`}
           maxLength={1000}
         />

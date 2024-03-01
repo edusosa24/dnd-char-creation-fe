@@ -30,7 +30,7 @@ export const Combat = () => {
         <fieldset className={`${style.combatOthersFieldSet}`}>
           <label className={`${style.combatOthersLabel}`}>Armor Class</label>
           <input
-            {...register('armorClass', {
+            {...register('combat.armorClass', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -46,7 +46,7 @@ export const Combat = () => {
         <fieldset className={`${style.combatOthersFieldSet}`}>
           <label className={`${style.combatOthersLabel}`}>Initiative</label>
           <input
-            {...register('initiative', {
+            {...register('combat.initiative', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -62,7 +62,7 @@ export const Combat = () => {
         <fieldset className={`${style.combatOthersFieldSet}`}>
           <label className={`${style.combatOthersLabel}`}>Speed</label>
           <input
-            {...register('speed', {
+            {...register('combat.speed', {
               onChange: (e) => {
                 limitNumber(99, -99, e);
               },
@@ -81,7 +81,7 @@ export const Combat = () => {
         <fieldset className={`${style.combatHPFieldSet}`}>
           <label className={`${style.combatHPLabel}`}>Total:</label>
           <input
-            {...register('hpTotal', {
+            {...register('combat.maxHitPoints', {
               onChange: (e) => {
                 limitNumber(999, -999, e);
               },
@@ -97,7 +97,7 @@ export const Combat = () => {
         <fieldset className={`${style.combatHPFieldSet}`}>
           <label className={`${style.combatHPLabel}`}>Current:</label>
           <input
-            {...register('hpCurrent', {
+            {...register('combat.currentHitPoints', {
               onChange: (e) => {
                 limitNumber(999, -999, e);
               },
@@ -113,7 +113,7 @@ export const Combat = () => {
         <fieldset className={`${style.combatHPFieldSet}`}>
           <label className={`${style.combatHPLabel}`}>Temporary:</label>
           <input
-            {...register('hpTemp', {
+            {...register('combat.temporaryHitPoints', {
               onChange: (e) => {
                 limitNumber(999, -999, e);
               },
@@ -135,7 +135,7 @@ export const Combat = () => {
           <fieldset className={`${style.combatHDFieldSet}`}>
             <div className={`w-[20%] `} />
             <input
-              {...register('hitDice', { maxLength: 15 })}
+              {...register('combat.hitDice', { maxLength: 15 })}
               className={`${style.combatHDInput} rounded-t-full border-b-0`}
               type="text"
               maxLength={15}
@@ -144,7 +144,7 @@ export const Combat = () => {
           <fieldset className={`${style.combatHDFieldSet}`}>
             <label className={`${style.combatHDLabel}`}>Total:</label>
             <input
-              {...register('hitDiceTotal', { maxLength: 15 })}
+              {...register('combat.hitDiceTotal', { maxLength: 15 })}
               className={`${style.combatHDInput} rounded-b-full`}
               type="text"
               maxLength={15}
@@ -159,7 +159,7 @@ export const Combat = () => {
             <fieldset className={`${style.combatDSFieldSet}`}>
               <label className={`${style.combatDSLabel}`}>Success:</label>
               <input
-                {...register('dsSuccess', { max: 3, min: 0 })}
+                {...register('combat.deathSaves.success', { max: 3, min: 0 })}
                 className={`${style.combatDSInput} text-green-700`}
                 type="number"
                 min={0}
@@ -174,7 +174,7 @@ export const Combat = () => {
             <fieldset className={`${style.combatDSFieldSet}`}>
               <label className={`${style.combatDSLabel}`}>Failure:</label>
               <input
-                {...register('dsFailure', { max: 3, min: 0 })}
+                {...register('combat.deathSaves.failure', { max: 3, min: 0 })}
                 className={`${style.combatDSInput} text-red-700`}
                 type="number"
                 min={0}
@@ -202,19 +202,29 @@ export const Combat = () => {
         </div>
         <div className={`${style.combatAnSSubDiv} justify-between`}>
           <input
-            {...register('wpn1Name', { maxLength: 22 })}
+            {...register('combat.attacksAndSpellcasting.weapons.0.name', {
+              maxLength: 22
+            })}
             type="text"
             className={`${style.combatAnSInput} w-[40%]`}
             maxLength={22}
           />
           <input
-            {...register('wpn1Bonus', { maxLength: 11 })}
+            {...register(
+              'combat.attacksAndSpellcasting.weapons.0.attackBonus',
+              { maxLength: 11 }
+            )}
             type="text"
             className={`${style.combatAnSInput} w-[19%]`}
             maxLength={11}
           />
           <input
-            {...register('wpn1DmgType', { maxLength: 22 })}
+            {...register(
+              'combat.attacksAndSpellcasting.weapons.0.damageAndType',
+              {
+                maxLength: 22
+              }
+            )}
             type="text"
             className={`${style.combatAnSInput} w-[40%]`}
             maxLength={22}
@@ -222,19 +232,27 @@ export const Combat = () => {
         </div>
         <div className={`${style.combatAnSSubDiv} justify-between`}>
           <input
-            {...register('wpn2Name', { maxLength: 22 })}
+            {...register('combat.attacksAndSpellcasting.weapons.1.name', {
+              maxLength: 22
+            })}
             type="text"
             className={`${style.combatAnSInput} w-[40%]`}
             maxLength={22}
           />
           <input
-            {...register('wpn2Bonus', { maxLength: 11 })}
+            {...register(
+              'combat.attacksAndSpellcasting.weapons.1.attackBonus',
+              { maxLength: 11 }
+            )}
             type="text"
             className={`${style.combatAnSInput} w-[19%]`}
             maxLength={11}
           />
           <input
-            {...register('wpn2DmgType', { maxLength: 22 })}
+            {...register(
+              'combat.attacksAndSpellcasting.weapons.1.damageAndType',
+              { maxLength: 22 }
+            )}
             type="text"
             className={`${style.combatAnSInput} w-[40%]`}
             maxLength={22}
@@ -242,26 +260,36 @@ export const Combat = () => {
         </div>
         <div className={`${style.combatAnSSubDiv} justify-between`}>
           <input
-            {...register('wpn3Name', { maxLength: 22 })}
+            {...register('combat.attacksAndSpellcasting.weapons.2.name', {
+              maxLength: 22
+            })}
             type="text"
             className={`${style.combatAnSInput} w-[40%]`}
             maxLength={22}
           />
           <input
-            {...register('wpn3Bonus', { maxLength: 11 })}
+            {...register(
+              'combat.attacksAndSpellcasting.weapons.2.attackBonus',
+              { maxLength: 11 }
+            )}
             type="text"
             className={`${style.combatAnSInput} w-[19%]`}
             maxLength={11}
           />
           <input
-            {...register('wpn3DmgType', { maxLength: 22 })}
+            {...register(
+              'combat.attacksAndSpellcasting.weapons.2.damageAndType',
+              { maxLength: 22 }
+            )}
             type="text"
             className={`${style.combatAnSInput} w-[40%]`}
             maxLength={22}
           />
         </div>
         <textarea
-          {...register('atkNSpellcasting', { maxLength: 600 })}
+          {...register('combat.attacksAndSpellcasting.extra', {
+            maxLength: 600
+          })}
           className={`${style.combatAnSTextArea}`}
           maxLength={600}
         />

@@ -29,7 +29,7 @@ export const GeneralAndAppearance = () => {
       <fieldset className={`${style.nameFieldSet}`}>
         <p>Name</p>
         <input
-          {...register('name', { maxLength: 30 })}
+          {...register('general.name', { maxLength: 30 })}
           className={`${style.nameInput}`}
           maxLength={30}
         />
@@ -38,7 +38,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Class</label>
           <input
-            {...register('class', { maxLength: 18 })}
+            {...register('general.class', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -46,7 +46,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Level</label>
           <input
-            {...register('level', {
+            {...register('general.level', {
               onChange: (e) => {
                 limitNumber(999, 0, e);
               },
@@ -62,7 +62,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Background</label>
           <input
-            {...register('background', { maxLength: 18 })}
+            {...register('general.background', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -70,7 +70,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Player name</label>
           <input
-            {...register('playerName', { maxLength: 18 })}
+            {...register('general.playerName', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -78,7 +78,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Race</label>
           <input
-            {...register('race', { maxLength: 18 })}
+            {...register('general.race', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -86,7 +86,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Alignment</label>
           <input
-            {...register('alignment', { maxLength: 18 })}
+            {...register('general.alignment', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -94,7 +94,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Experience points</label>
           <input
-            {...register('experiencePoints', {
+            {...register('general.experience', {
               onChange: (e) => {
                 limitNumber(999999999999999, 0, e);
               },
@@ -112,7 +112,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Age</label>
           <input
-            {...register('age', { maxLength: 18 })}
+            {...register('appearance.age', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -120,7 +120,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Height</label>
           <input
-            {...register('height', { maxLength: 18 })}
+            {...register('appearance.height', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -128,7 +128,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Weight</label>
           <input
-            {...register('weight', { maxLength: 18 })}
+            {...register('appearance.weight', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -136,7 +136,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Eyes</label>
           <input
-            {...register('eyes', { maxLength: 18 })}
+            {...register('appearance.eyes', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -144,7 +144,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Skin</label>
           <input
-            {...register('skin', { maxLength: 18 })}
+            {...register('appearance.skin', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
@@ -152,7 +152,7 @@ export const GeneralAndAppearance = () => {
         <fieldset className={`${style.generalFieldSet}`}>
           <label>Hair</label>
           <input
-            {...register('hair', { maxLength: 18 })}
+            {...register('appearance.hair', { maxLength: 18 })}
             className={`${style.generalInput}`}
             maxLength={18}
           />
