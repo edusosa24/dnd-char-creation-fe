@@ -1,5 +1,4 @@
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
-// import { yupResolver } from '@hookform/resolvers/yup';
 import { characterSchema } from '../../utils/validators/characterValidator';
 import { GeneralAndAppearance } from './formSections/generalAndAppearance';
 import { AbilityScore } from './formSections/abilityScore';
@@ -8,25 +7,24 @@ import { Combat } from './formSections/combat';
 import { FeatTraitsAndOther } from './formSections/featTraitsAndOther';
 import { Backstory } from './formSections/backstory';
 import { Spells } from './formSections/spells';
+import { FormFooter } from './formSections/footer';
 import * as style from '../../assets/styles/components/characterForm/characterForm.json';
 import { useEffect } from 'react';
-// import { useNavigate } from 'react-router';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 import { loadOneCharacter } from '../../reducers/charactersReducer';
-// import { DevTool } from '@hookform/devtools';
+import { getStorage } from '../../utils/functions';
+import characterServices from '../../services/characterServices';
+import { setNotification } from '../../reducers/notificationReducer';
+// import { yupResolver } from '@hookform/resolvers/yup';
 
 characterSchema.required();
 
 export const CharacterForm = (charId: any) => {
   const dispatch = useAppDispatch();
-  //const navigate = useNavigate();
-  //let character: typeof characterSchema;
 
   const character: any = useAppSelector((state) => {
     return state.characters;
   });
-
-  console.log(character);
 
   const methods = useForm({
     //resolver: yupResolver(characterSchema),
@@ -41,11 +39,29 @@ export const CharacterForm = (charId: any) => {
     }
   }, [charId, dispatch]);
 
-  const updateCharacter: SubmitHandler<any> = async (data: any) => {
+  const updateChar: SubmitHandler<typeof characterSchema> = async (
+    data: any
+  ) => {
     try {
-      return data;
-    } catch {
+      const { userId, token } = getStorage();
+      const { id, user, ...character } = Object.assign({}, data);
+      await characterServices.updateOne(
+        charId.charId,
+        character,
+        userId,
+        token
+      );
+
+      dispatch(
+        setNotification(
+          `${character.general.name} successfully updated.`,
+          'success',
+          2
+        )
+      );
       return;
+    } catch (err: any) {
+      console.log(err);
     }
   };
 
@@ -53,7 +69,7 @@ export const CharacterForm = (charId: any) => {
     <div className={`${style.component}`}>
       <FormProvider {...methods}>
         <form
-          onSubmit={methods.handleSubmit(updateCharacter)}
+          onSubmit={methods.handleSubmit(updateChar)}
           className={`${style.form}`}
         >
           <GeneralAndAppearance />
@@ -63,10 +79,10 @@ export const CharacterForm = (charId: any) => {
           <FeatTraitsAndOther />
           <Backstory />
           <Spells />
+          <br />
+          <FormFooter />
         </form>
       </FormProvider>
     </div>
   );
 };
-
-// <DevTool control={methods.control} />

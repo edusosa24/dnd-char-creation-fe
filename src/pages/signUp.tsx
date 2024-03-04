@@ -16,9 +16,7 @@ export const SignUpPage = () => {
   }, [navigate]);
 
   return (
-    <div
-      className={`${style.def.container} ${style.md.mdContainer} ${style.xxl.xxlContainer} bg-home-signup`}
-    >
+    <div className={`${style.container} bg-home-signup`}>
       <HomeLogo />
       <SignUp />
     </div>

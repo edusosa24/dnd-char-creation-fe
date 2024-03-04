@@ -138,9 +138,9 @@ export const Spells = () => {
             <input
               {...register('spells.slots.level1.total', {
                 onChange: (e) => {
-                  limitNumber(13, 0, e);
+                  limitNumber(12, 0, e);
                 },
-                max: 13,
+                max: 12,
                 min: 0
               })}
               className={`${style.spellsTotal}`}
@@ -152,9 +152,9 @@ export const Spells = () => {
             <input
               {...register('spells.slots.level1.expended', {
                 onChange: (e) => {
-                  limitNumber(13, 0, e);
+                  limitNumber(12, 0, e);
                 },
-                max: 13,
+                max: 12,
                 min: 0
               })}
               className={`${style.spellsExpended}`}
@@ -164,7 +164,7 @@ export const Spells = () => {
               onInput={(e) => limitInput(e)}
             />
           </div>
-          {spellInputs(13, 1)}
+          {spellInputs(12, 1)}
         </div>
         <div
           className={`xl:row-span-7 xl:col-start-1 xl:row-start-14 ${style.spellsDiv}`}

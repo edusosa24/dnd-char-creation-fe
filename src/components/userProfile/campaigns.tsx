@@ -40,69 +40,46 @@ export const Campaigns = () => {
   };
 
   return (
-    <section className={`${style.def.component}`}>
-      <div className={`${style.def.tableTop} ${style.md.tableTop}`}>
-        <h2 className={`${style.def.title}`}>Campaigns</h2>
-        <div className={`${style.def.searchBar} ${style.md.searchBar}`}>
+    <section className={`${style.component}`}>
+      <div className={`${style.tableTop}`}>
+        <h2 className={`${style.title}`}>Campaigns</h2>
+        <div className={`${style.searchBar}`}>
           <p className={`font-bold text-md`}>search by name:</p>
           <input
-            className={`${style.def.search}`}
+            className={`${style.search}`}
             onChange={handleNameFilter}
           ></input>
         </div>
       </div>
-      <table className={`${style.def.table} ${style.xxl.table}`}>
-        <thead
-          className={`${style.def.thead} ${style.md.thead} ${style.xxl.thead}`}
-        >
-          <tr className={`${style.def.theadRow} ${style.xxl.theadRow}`}>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[35%]`}>
-              Name
-            </th>
-            <th
-              className={`${style.def.th} ${style.xxl.th} 2xl:w-[35%] pr-1 2xl:pr-0`}
-            >
+      <table className={`${style.table}`}>
+        <thead className={`${style.thead}`}>
+          <tr className={`${style.theadRow}`}>
+            <th className={`${style.th} 2xl:w-[35%]`}>Name</th>
+            <th className={`${style.th} 2xl:w-[35%] pr-1 2xl:pr-0`}>
               #Players
             </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[15%]`}>
-              Edit
-            </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[15%]`}>
-              Delete
-            </th>
+            <th className={`${style.th} 2xl:w-[15%]`}>Edit</th>
+            <th className={`${style.th} 2xl:w-[15%]`}>Delete</th>
           </tr>
         </thead>
-        <tbody className={`${style.def.tbody} ${style.xxl.tbody}`}>
+        <tbody className={`${style.tbody}`}>
           {campaigns
             .filter((campaign) => campaign.name?.includes(nameFilter))
             .map((campaign) => {
               return (
-                <tr
-                  className={`${style.def.tbodyRow} ${style.xxl.tbodyRow}`}
-                  key={campaign.id}
-                >
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[35%]`}
-                  >
-                    {campaign.name}
-                  </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[35%]`}
-                  >
+                <tr className={`${style.tbodyRow}`} key={campaign.id}>
+                  <td className={`${style.td} 2xl:w-[35%]`}>{campaign.name}</td>
+                  <td className={`${style.td} 2xl:w-[35%]`}>
                     {campaign.characters.length}
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[15%]`}
-                  >
-                    <button className={`${style.def.tdBtn}`} onClick={() => {}}>
+                  <td className={`${style.td} 2xl:w-[15%]`}>
+                    <button className={`${style.tdBtn}`} onClick={() => {}}>
                       Link
                     </button>
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[15%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[15%]`}>
                     <button
-                      className={`${style.def.tdDel}`}
+                      className={`${style.tdDel}`}
                       onClick={() => {
                         handleDelete(campaign);
                       }}

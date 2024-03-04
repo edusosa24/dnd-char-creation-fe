@@ -16,9 +16,7 @@ export const LoginPage = () => {
   }, [navigate]);
 
   return (
-    <div
-      className={`${style.def.container} ${style.md.mdContainer} ${style.xxl.xxlContainer} bg-home-login`}
-    >
+    <div className={`${style.container} bg-home-login`}>
       <HomeLogo />
       <Login />
     </div>

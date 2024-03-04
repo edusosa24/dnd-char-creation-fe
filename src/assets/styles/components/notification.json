@@ -1,18 +1,6 @@
 {
-  "def": {
-    "component": "flex justify-between items-center w-fit rounded-2xl fixed left-[50%] translate-x-[-50%] top-5 pl-2 pt-2 pb-2 pr-2 z-10",
-    "button": "font-bold ml-1 mr-1 text-center text-xs",
-    "type": "font-bold text-xs",
-    "text": "text-xs"
-  },
-  "md": {
-    "button": "md:text-sm md:ml-2 md:mr-2",
-    "type": "md:text-sm",
-    "text": "md:text-sm"
-  },
-  "xl": {
-    "button": "xl:text-lg xl:ml-3 xl:mr-3",
-    "type": "xl:text-lg",
-    "text": "xl:text-lg"
-  }
+  "component": "flex justify-between items-center w-fit z-50 rounded-2xl fixed left-[50%] translate-x-[-50%] top-5 pl-2 pt-2 pb-2 pr-2 z-10",
+  "button": "font-bold ml-1 mr-1 text-center text-xs md:text-sm md:ml-2 md:mr-2 xl:text-lg xl:ml-3 xl:mr-3",
+  "type": "font-bold text-xs md:text-sm xl:text-lg",
+  "text": "text-xs md:text-sm xl:text-lg"
 }

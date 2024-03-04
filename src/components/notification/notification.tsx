@@ -18,21 +18,12 @@ export const Notification = () => {
     return;
   } else {
     return (
-      <div className={`${style.def.component} ${colors.bg}`}>
-        <p
-          className={`${colors.text} ${style.def.text} ${style.md.text} ${style.xl.text}`}
-        >
-          <span
-            className={`${style.def.type} ${style.md.type} ${style.xl.type} ${colors.type}`}
-          >
-            {notification.type}
-          </span>
-          : {notification.notification}
+      <div className={`${style.component} ${colors.bg}`}>
+        <p className={`${colors.text} ${style.text}`}>
+          <span className={`${style.type}`}>{notification.type}</span>:{' '}
+          {notification.notification}
         </p>
-        <button
-          className={`${style.def.button} ${style.md.button} ${style.xl.button} ${colors.type}`}
-          onClick={closeNotification}
-        >
+        <button className={`${style.button}`} onClick={closeNotification}>
           X
         </button>
       </div>

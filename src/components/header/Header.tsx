@@ -10,21 +10,18 @@ export const Header = () => {
   };
 
   return (
-    <nav className={`${style.def.component} ${style.md.component}`}>
-      <div className={`${style.def.logo} ${style.md.logo} ${style.xxl.logo}`}>
+    <nav className={`${style.component}`}>
+      <div className={`${style.logo}`}>
         <img
           src={'/src/assets/images/dnd-logo.png'}
-          className={`${style.def.logoImg} ${style.md.logoImg}`}
+          className={`${style.logoImg}`}
         />
-        <h3 className={`${style.def.logoText} ${style.md.logoText}`}>
+        <h3 className={`${style.logoText}`}>
           CHARACTER <br /> CREATOR
         </h3>
       </div>
       <div>
-        <button
-          className={`${style.def.logout} ${style.md.logout}`}
-          onClick={handleLogout}
-        >
+        <button className={`${style.logout}`} onClick={handleLogout}>
           Logout
         </button>
       </div>

@@ -44,36 +44,28 @@ export const SignUp = () => {
   };
 
   return (
-    <div
-      className={`${style.def.component} ${style.xl.component} ${style.xxl.component}`}
-    >
-      <h3 className={`${style.def.title}`}>SIGN UP</h3>
-      <form
-        onSubmit={handleSubmit(createAccount)}
-        className={`${style.def.form} ${style.xxl.form}`}
-      >
-        <fieldset className={`${style.def.fieldset}`}>
-          <label htmlFor="username" className={`${style.def.label}`}>
+    <div className={`${style.component}`}>
+      <h3 className={`${style.title}`}>SIGN UP</h3>
+      <form onSubmit={handleSubmit(createAccount)} className={`${style.form}`}>
+        <fieldset className={`${style.fieldset}`}>
+          <label htmlFor="username" className={`${style.label}`}>
             username
           </label>
-          <input {...register('username')} className={`${style.def.input}`} />
-          <p className={`${style.def.error}`}> {errors.username?.message}</p>
+          <input {...register('username')} className={`${style.input}`} />
+          <p className={`${style.error}`}> {errors.username?.message}</p>
         </fieldset>
-        <fieldset className={`${style.def.fieldset}`}>
-          <label htmlFor="password" className={`${style.def.label}`}>
+        <fieldset className={`${style.fieldset}`}>
+          <label htmlFor="password" className={`${style.label}`}>
             password
           </label>
           <input
             type="password"
             {...register('password')}
-            className={`${style.def.input}`}
+            className={`${style.input}`}
           />
-          <p className={`${style.def.error} `}> {errors.password?.message}</p>
+          <p className={`${style.error} `}> {errors.password?.message}</p>
         </fieldset>
-        <button
-          type="submit"
-          className={`${style.def.button} ${style.xl.button}`}
-        >
+        <button type="submit" className={`${style.button}`}>
           Register
         </button>
       </form>

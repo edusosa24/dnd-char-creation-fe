@@ -23,6 +23,25 @@ const getAll = async (userId: string, token: string) => {
   return response.data;
 };
 
+const updateOne = async (
+  characterId: string,
+  character: any,
+  userId: string,
+  token: string
+) => {
+  const response = await axios
+    .put(`${baseUrl}/user/${userId}/character/${characterId}`, character, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+  return response.status;
+};
+
 const deleteOne = async (
   characterId: string,
   userId: string,
@@ -50,4 +69,4 @@ const postOne = async (userData: iUser) => {
 
 
 */
-export default { getOne, getAll, deleteOne };
+export default { getOne, getAll, updateOne, deleteOne };

@@ -54,101 +54,68 @@ export const Characters = () => {
   };
 
   return (
-    <section className={`${style.def.component}`}>
-      <div className={`${style.def.tableTop} ${style.md.tableTop}`}>
-        <h2 className={`${style.def.title}`}>Characters</h2>
-        <div className={`${style.def.searchBar} ${style.md.searchBar}`}>
+    <section className={`${style.component}`}>
+      <div className={`${style.tableTop}`}>
+        <h2 className={`${style.title}`}>Characters</h2>
+        <div className={`${style.searchBar}`}>
           <p className={`font-bold text-md`}>search by name:</p>
           <input
-            className={`${style.def.search}`}
+            className={`${style.search}`}
             onChange={handleNameFilter}
           ></input>
         </div>
       </div>
-      <table className={`${style.def.table} ${style.xxl.table}`}>
-        <thead
-          className={`${style.def.thead} ${style.md.thead} ${style.xxl.thead}`}
-        >
-          <tr className={`${style.def.theadRow} ${style.xxl.theadRow}`}>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>ID</th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[20%]`}>
-              Name
-            </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[20%]`}>
-              Class
-            </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[20%]`}>
-              Race
-            </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>
-              Level
-            </th>
-            <th className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%]`}>
-              Edit
-            </th>
-            <th
-              className={`${style.def.th} ${style.xxl.th} 2xl:w-[8%] pr-1 2xl:pr-0`}
-            >
-              Delete
-            </th>
+      <table className={`${style.table}`}>
+        <thead className={`${style.thead}`}>
+          <tr className={`${style.theadRow}`}>
+            <th className={`${style.th} 2xl:w-[8%]`}>ID</th>
+            <th className={`${style.th} 2xl:w-[20%]`}>Name</th>
+            <th className={`${style.th} 2xl:w-[20%]`}>Class</th>
+            <th className={`${style.th} 2xl:w-[20%]`}>Race</th>
+            <th className={`${style.th} 2xl:w-[8%]`}>Level</th>
+            <th className={`${style.th} 2xl:w-[8%]`}>Edit</th>
+            <th className={`${style.th} 2xl:w-[8%] pr-1 2xl:pr-0`}>Delete</th>
           </tr>
         </thead>
-        <tbody className={`${style.def.tbody} ${style.xxl.tbody}`}>
+        <tbody className={`${style.tbody}`}>
           {characters
             .filter((character) => character.general.name?.includes(nameFilter))
             .map((character) => {
               return (
-                <tr
-                  className={`${style.def.tbodyRow} ${style.xxl.tbodyRow}`}
-                  key={character.id}
-                >
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
-                  >
+                <tr className={`${style.tbodyRow}`} key={character.id}>
+                  <td className={`${style.td} 2xl:w-[8%]`}>
                     <button
-                      className={`${style.def.tdBtn}`}
+                      className={`${style.tdBtn}`}
                       onClick={() => handleCopy(character.id)}
                     >
                       Copy
                     </button>
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[20%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[20%]`}>
                     {character.general.name}
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[20%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[20%]`}>
                     {character.general.class}
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[20%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[20%]`}>
                     {character.general.race}
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[8%]`}>
                     {character.general.level}
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[8%]`}>
                     {' '}
                     <button
-                      className={`${style.def.tdBtn}`}
+                      className={`${style.tdBtn}`}
                       onClick={() => handleEdit(character.id)}
                     >
                       Link
                     </button>
                   </td>
-                  <td
-                    className={`${style.def.td} ${style.xxl.td} ${style.xxxl.td} 2xl:w-[8%]`}
-                  >
+                  <td className={`${style.td} 2xl:w-[8%]`}>
                     {' '}
                     <button
-                      className={`${style.def.tdDel}`}
+                      className={`${style.tdDel}`}
                       onClick={() => {
                         handleDelete(character);
                       }}

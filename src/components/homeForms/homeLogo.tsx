@@ -2,15 +2,9 @@ import * as style from '../../assets/styles/components/homeForms/homeLogo.json';
 
 export const HomeLogo = () => {
   return (
-    <section className={`${style.def.section}`}>
-      <div
-        className={`${style.def.logo} ${style.md.mdLogo} ${style.xl.xlLogo} ${style.xxl.xxlLogo}`}
-      />
-      <h2
-        className={`${style.def.title} ${style.md.mdTitle} ${style.xl.xlTitle} ${style.xxl.xxlTitle}`}
-      >
-        Character Creator
-      </h2>
+    <section className={`${style.section}`}>
+      <div className={`${style.logo}`} />
+      <h2 className={`${style.title}`}>Character Creator</h2>
     </section>
   );
 };

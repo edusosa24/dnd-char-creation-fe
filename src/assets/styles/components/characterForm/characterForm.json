@@ -64,6 +64,11 @@
   "featuresFieldSet": "flex flex-col justify-center items-center w-full gap-y-2 md:w-[47%]",
   "featuresLabel": "pl-1 text-center text-xs text-nowrap md:text-sm 2xl:text-lg",
   "featuresTextArea": "w-full p-2 border-2 border-black rounded-sm resize-none text-wrap text-xs h-80 overflow-y-auto table-scroll md:h-96 md:text-sm xl:text-normal 2xl:text-lg",
+  "backstorySection": "flex w-full flex-wrap flex-col bg-slate-100 bg-opacity-[60%] py-3 items-center gap-y-8 justify-self-center md:items-start md:justify-around md:flex-row",
+  "backstoryDiv": "flex flex-wrap justify-around py-3 w-[90%] gap-y-4",
+  "backstoryFieldSet": "flex flex-col justify-center items-center w-full gap-y-2 md:w-[47%]",
+  "backstoryLabel": "pl-1 text-center text-xs text-nowrap md:text-sm 2xl:text-lg",
+  "backstoryTextArea": "w-full p-2 border-2 border-black rounded-sm resize-none text-wrap text-xs h-80 overflow-y-auto table-scroll md:h-96 md:text-sm xl:text-normal 2xl:text-lg",
   "spellsSection": "flex w-full flex-wrap flex-col bg-slate-100 bg-opacity-[60%] py-3 items-center gap-y-8 justify-self-center md:items-start md:justify-around md:flex-row",
   "spellsOthersDiv": "flex gap-y-4 w-full rounded-xl py-4 px-3 justify-center items-center gap-x-1 flex-wrap xl:justify-center",
   "spellsOthersFieldSet": "flex flex-col w-[49%] relative justify-center items-center gap-y-2 md:w-[15%]",
@@ -81,5 +86,8 @@
   "spellsExpended": "text-center font-semibold bg-white border-2 border-black border-l-0 rounded-r-lg w-[50%] h-12 placeholder:text-xs",
   "spellsKnownDiv": "flex w-full items-center pl-5 gap-x-5 md:gap-x-10 md:pl-10",
   "spellCheck": "h-4 w-4",
-  "spellName": "w-[75%] h-7 border-b-2 border-black text-center p-1 mt-2 bg-white bg-opacity-50 text-xs md:text-sm 2xl:text-lg"
+  "spellName": "w-[75%] h-7 border-b-2 border-black text-center p-1 mt-2 bg-white bg-opacity-50 text-xs md:text-sm 2xl:text-lg",
+  "formFooter": "flex justify-center gap-x-5 bottom-8 fixed z-50 h-10 w-[99%] xl:justify-end xl:pr-[15%]",
+  "formSubmitBtn": "font-semibold border-2 border-black rounded-lg p-1 text-center w-32 bg-blue-600 bg-opacity-50 hover:bg-opacity-100 hover:text-white active:bg-blue-800",
+  "formCancelBtn": "font-semibold border-2 border-black rounded-lg p-1 text-center w-32 bg-red-600 bg-opacity-50 hover:bg-opacity-100 hover:text-white active:bg-red-800"
 }
