@@ -4,6 +4,8 @@ import { deleteCampaign, loadCampaigns } from '../../reducers/campaignsReducer';
 import { iCampaign } from '../../utils/interfaces/iCampaign';
 import { getStorage } from '../../utils/functions';
 import * as style from '../../assets/styles/components/profileTables/profileTables.json';
+import { useNavigate } from 'react-router-dom';
+import campServices from '../../services/campaignServices';
 
 export const Campaigns = () => {
   const dispatch = useAppDispatch();
@@ -11,6 +13,8 @@ export const Campaigns = () => {
     return state.campaigns;
   });
   const [nameFilter, setNameFilter] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     try {
@@ -34,6 +38,20 @@ export const Campaigns = () => {
         const session = getStorage();
         dispatch(deleteCampaign(campaign.id, session));
       }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleNew = async () => {
+    try {
+      const session = getStorage();
+      const response = await campServices.postOne(
+        session.userId,
+        session.token
+      );
+      dispatch(loadCampaigns(session));
+      //navigate(`./campaigns/${response.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -92,6 +110,9 @@ export const Campaigns = () => {
             })}
         </tbody>
       </table>
+      <button onClick={handleNew} className={`${style.addEntryBtn}`}>
+        +
+      </button>
     </section>
   );
 };

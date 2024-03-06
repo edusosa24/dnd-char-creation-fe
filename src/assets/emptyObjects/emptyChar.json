@@ -1,0 +1,645 @@
+{
+  "empty": {
+    "general": {
+      "name": "",
+      "class": "",
+      "level": 0,
+      "background": "",
+      "playerName": "",
+      "race": "",
+      "alignment": "",
+      "experience": 0
+    },
+    "abilityScore": {
+      "inspiration": 0,
+      "proficiencyBonus": 0,
+      "passiveWisdom": 0,
+      "stats": {
+        "strength": {
+          "value": 0,
+          "bonus": 0
+        },
+        "dexterity": {
+          "value": 0,
+          "bonus": 0
+        },
+        "constitution": {
+          "value": 0,
+          "bonus": 0
+        },
+        "intelligence": {
+          "value": 0,
+          "bonus": 0
+        },
+        "wisdom": {
+          "value": 0,
+          "bonus": 0
+        },
+        "charisma": {
+          "value": 0,
+          "bonus": 0
+        }
+      },
+      "savingThrows": {
+        "strength": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "dexterity": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "constitution": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "intelligence": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "wisdom": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "charisma": {
+          "proficiency": false,
+          "bonus": 0
+        }
+      },
+      "skills": {
+        "acrobatics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "animalHandling": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "arcana": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "athletics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "deception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "history": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "insight": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "intimidation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "investigation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "medicine": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "nature": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "perception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "performance": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "persuasion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "religion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "sleightOfHand": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "stealth": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "survival": {
+          "proficiency": false,
+          "bonus": 0
+        }
+      }
+    },
+    "featuresTraitsAndOtherProficiencies": {
+      "personalityTraits": "",
+      "ideals": "",
+      "bonds": "",
+      "flaws": "",
+      "featuresAndTraits": "",
+      "otherProficienciesAndLanguages": ""
+    },
+    "combat": {
+      "armorClass": 0,
+      "initiative": 0,
+      "speed": 0,
+      "maxHitPoints": 0,
+      "currentHitPoints": 0,
+      "temporaryHitPoints": 0,
+      "hitDice": "",
+      "hitDiceTotal": "",
+      "deathSaves": {
+        "success": 0,
+        "failure": 0
+      },
+      "attacksAndSpellcasting": {
+        "weapons": [
+          {
+            "name": "",
+            "attackBonus": "",
+            "damageAndType": ""
+          },
+          {
+            "name": "",
+            "attackBonus": "",
+            "damageAndType": ""
+          },
+          {
+            "name": "",
+            "attackBonus": "",
+            "damageAndType": ""
+          }
+        ],
+        "extra": ""
+      }
+    },
+    "equipmentAndMoney": {
+      "money": {
+        "copper": 0,
+        "silver": 0,
+        "electrum": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "equipment": ""
+    },
+    "appearance": {
+      "age": "",
+      "height": "",
+      "weight": "",
+      "eyes": "",
+      "skin": "",
+      "hair": "",
+      "portrait": ""
+    },
+    "backstory": {
+      "backstory": "",
+      "alliesAndOrganizations": "",
+      "organizationName": "",
+      "organizationSymbol": "",
+      "additionalFeaturesAndTraits": "",
+      "treasure": ""
+    },
+    "spells": {
+      "castingClass": "",
+      "castingAbility": "",
+      "saveDice": 0,
+      "bonusAttack": 0,
+      "cantrips": ["", "", "", "", "", "", "", ""],
+      "slots": {
+        "level1": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level2": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level3": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level4": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level5": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level6": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level7": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level8": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        },
+        "level9": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            },
+            {
+              "name": "",
+              "prepared": false
+            }
+          ]
+        }
+      }
+    }
+  }
+}

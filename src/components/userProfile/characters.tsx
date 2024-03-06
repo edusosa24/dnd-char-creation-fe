@@ -7,6 +7,7 @@ import {
 import { getStorage } from '../../utils/functions';
 import * as style from '../../assets/styles/components/profileTables/profileTables.json';
 import { useNavigate } from 'react-router-dom';
+import charServices from '../../services/characterServices';
 
 export const Characters = () => {
   const dispatch = useAppDispatch();
@@ -53,16 +54,26 @@ export const Characters = () => {
     }
   };
 
+  const handleNew = async () => {
+    try {
+      const session = getStorage();
+      const response = await charServices.postOne(
+        session.userId,
+        session.token
+      );
+      navigate(`./character/${response.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <section className={`${style.component}`}>
       <div className={`${style.tableTop}`}>
         <h2 className={`${style.title}`}>Characters</h2>
         <div className={`${style.searchBar}`}>
           <p className={`font-bold text-md`}>search by name:</p>
-          <input
-            className={`${style.search}`}
-            onChange={handleNameFilter}
-          ></input>
+          <input className={`${style.search}`} onChange={handleNameFilter} />
         </div>
       </div>
       <table className={`${style.table}`}>
@@ -128,6 +139,9 @@ export const Characters = () => {
             })}
         </tbody>
       </table>
+      <button onClick={handleNew} className={`${style.addEntryBtn}`}>
+        +
+      </button>
     </section>
   );
 };

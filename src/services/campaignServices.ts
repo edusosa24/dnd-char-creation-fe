@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { iUser } from '../utils/interfaces/iUser';
+import * as newCamp from '../assets/emptyObjects/emptyCampaign.json';
 
 const baseUrl: string = 'http://localhost:3000/api/campaigns';
 
@@ -36,19 +36,17 @@ const deleteOne = async (campaignId: string, userId: string, token: string) => {
   return response.status;
 };
 
-/*
-const postOne = async (userData: iUser) => {
-  const response = await axios.post(`${baseUrl}`, userData).catch((err) => {
-    throw err;
-  });
+const postOne = async (userId: string, token: string) => {
+  const response = await axios
+    .post(`${baseUrl}/user/${userId}`, newCamp.empty, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
   return response.data;
 };
 
-const deleteOne = async (userId: string) => {
-  const response = await axios.delete(`${baseUrl}/${userId}`).catch((err) => {
-    throw err;
-  });
-  return response.status;
-};
-*/
-export default { getOne, getAll, deleteOne };
+export default { getOne, getAll, postOne, deleteOne };

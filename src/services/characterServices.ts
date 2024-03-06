@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { iUser } from '../utils/interfaces/iUser';
+import * as newChar from '../assets/emptyObjects/emptyChar.json';
 
 const baseUrl: string = 'http://localhost:3000/api/characters';
 
@@ -59,14 +59,17 @@ const deleteOne = async (
   return response.status;
 };
 
-/*
-const postOne = async (userData: iUser) => {
-  const response = await axios.post(`${baseUrl}`, userData).catch((err) => {
-    throw err;
-  });
+const postOne = async (userId: string, token: string) => {
+  const response = await axios
+    .post(`${baseUrl}/user/${userId}`, newChar.empty, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
   return response.data;
 };
 
-
-*/
-export default { getOne, getAll, updateOne, deleteOne };
+export default { getOne, getAll, postOne, updateOne, deleteOne };
