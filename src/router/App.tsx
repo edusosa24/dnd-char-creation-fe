@@ -8,6 +8,7 @@ import { setLogin } from '../reducers/sessionReducer';
 import { useEffect } from 'react';
 import { getStorage } from '../utils/functions';
 import { useAppDispatch } from '../utils/hooks';
+import { CampaignEditPage } from '../pages/campaignEdit';
 
 const App = () => {
   const navigate = useNavigate();
@@ -30,6 +31,10 @@ const App = () => {
         <Route
           path="/profile/:username/character/:id"
           element={<CharacterEditPage />}
+        />
+        <Route
+          path="/profile/:username/campaign/:id"
+          element={<CampaignEditPage />}
         />
       </Routes>
     </>

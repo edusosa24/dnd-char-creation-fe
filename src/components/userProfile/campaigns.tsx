@@ -43,6 +43,10 @@ export const Campaigns = () => {
     }
   };
 
+  const handleEdit = (id: string) => {
+    navigate(`./campaign/${id}`);
+  };
+
   const handleNew = async () => {
     try {
       const session = getStorage();
@@ -51,7 +55,7 @@ export const Campaigns = () => {
         session.token
       );
       dispatch(loadCampaigns(session));
-      //navigate(`./campaigns/${response.id}`);
+      navigate(`./campaign/${response.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -91,7 +95,12 @@ export const Campaigns = () => {
                     {campaign.characters.length}
                   </td>
                   <td className={`${style.td} 2xl:w-[15%]`}>
-                    <button className={`${style.tdBtn}`} onClick={() => {}}>
+                    <button
+                      className={`${style.tdBtn}`}
+                      onClick={() => {
+                        handleEdit(campaign.id);
+                      }}
+                    >
                       Link
                     </button>
                   </td>

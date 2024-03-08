@@ -23,6 +23,25 @@ const getAll = async (userId: string, token: string) => {
   return response.data;
 };
 
+const updateOne = async (
+  campaignId: string,
+  campaign: any,
+  userId: string,
+  token: string
+) => {
+  const response = await axios
+    .put(`${baseUrl}/user/${userId}/campaign/${campaignId}`, campaign, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+  return response.data;
+};
+
 const deleteOne = async (campaignId: string, userId: string, token: string) => {
   const response = await axios
     .delete(`${baseUrl}/user/${userId}/campaign/${campaignId}`, {
@@ -49,4 +68,4 @@ const postOne = async (userId: string, token: string) => {
   return response.data;
 };
 
-export default { getOne, getAll, postOne, deleteOne };
+export default { getOne, getAll, postOne, updateOne, deleteOne };
