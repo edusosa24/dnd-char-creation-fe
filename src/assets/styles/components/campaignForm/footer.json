@@ -1,0 +1,4 @@
+{
+  "footerSection": "flex justify-center gap-x-5 bottom-8 fixed z-50 h-10 w-[99%] xl:justify-end xl:pr-[10%]",
+  "footerBackBtn": "font-semibold border-2 border-black rounded-lg p-1 text-center w-32 bg-red-600 bg-opacity-50 hover:bg-opacity-100 hover:text-white active:bg-red-800"
+}

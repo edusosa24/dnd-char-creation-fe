@@ -1,0 +1,13 @@
+{
+  "component": "flex flex-col items-center p-2 w-full gap-y-16",
+  "nameForm": "flex flex-col items-center gap-y-16 p-3 w-full",
+  "charForm": "flex flex-col items-center gap-y-16 p-3 w-full",
+  "nameTitle": "text-xl font-semibold",
+  "charTitle": "text-center text-xl font-semibold w-full",
+  "nameFieldSet": "flex flex-col w-full gap-y-2 items-center justify-start",
+  "nameInput": "text-xs border-2 border-black text-center w-60 p-1 md:w-80 md:text-sm 2xl:text-base 2xl:w-128",
+  "nameUpdateBtn": "font-semibold border-2 border-black rounded-lg p-1 text-center w-20 bg-blue-500 hover:bg-blue-600 hover:text-white active:bg-blue-800",
+  "charFieldSet": "flex flex-wrap w-full gap-2 items-center justify-center",
+  "charInput": "text-xs border-2 border-black text-center w-60 p-1 md:w-80 md:text-sm 2xl:text-base",
+  "charAddBtn": "font-semibold border-2 border-black rounded-lg p-1 text-center w-12 bg-blue-500 hover:bg-blue-600 hover:text-white active:bg-blue-800"
+}

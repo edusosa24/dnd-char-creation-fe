@@ -1,7 +1,6 @@
 import { Dispatch, createSlice } from '@reduxjs/toolkit';
 import { iCampaign } from '../utils/interfaces/iCampaign';
 import campaignServices from '../services/campaignServices';
-import characterServices from '../services/characterServices';
 
 const campaignSlice = createSlice({
   name: 'campaign',

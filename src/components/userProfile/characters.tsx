@@ -115,7 +115,6 @@ export const Characters = () => {
                     {character.general.level}
                   </td>
                   <td className={`${style.td} 2xl:w-[8%]`}>
-                    {' '}
                     <button
                       className={`${style.tdBtn}`}
                       onClick={() => handleEdit(character.id)}
@@ -124,7 +123,6 @@ export const Characters = () => {
                     </button>
                   </td>
                   <td className={`${style.td} 2xl:w-[8%]`}>
-                    {' '}
                     <button
                       className={`${style.tdDel}`}
                       onClick={() => {
