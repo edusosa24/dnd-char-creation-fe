@@ -15,7 +15,6 @@ import { loadOneCharacter } from '../../reducers/charactersReducer';
 import { getStorage } from '../../utils/functions';
 import characterServices from '../../services/characterServices';
 import { setNotification } from '../../reducers/notificationReducer';
-// import { yupResolver } from '@hookform/resolvers/yup';
 
 characterSchema.required();
 
@@ -27,7 +26,6 @@ export const CharacterForm = (charId: any) => {
   });
 
   const methods = useForm({
-    //resolver: yupResolver(characterSchema),
     values: { ...character }
   });
 

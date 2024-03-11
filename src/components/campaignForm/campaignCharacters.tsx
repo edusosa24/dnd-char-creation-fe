@@ -13,6 +13,7 @@ export const CampaignCharacters = () => {
 
   const handleDetails = async (charId: any) => {
     console.log('Under Development', charId);
+    window.open(`${window.location.origin}/character/${charId}`);
   };
 
   useEffect(() => {}, [campaign]);

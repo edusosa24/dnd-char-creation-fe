@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { getStorage } from '../utils/functions';
 import { useAppDispatch } from '../utils/hooks';
 import { CampaignEditPage } from '../pages/campaignEdit';
+import { CharacterDetailsPage } from '../pages/characterDetails';
 
 const App = () => {
   const navigate = useNavigate();
@@ -36,10 +37,10 @@ const App = () => {
           path="/profile/:username/campaign/:id"
           element={<CampaignEditPage />}
         />
+        <Route path="/character/:id" element={<CharacterDetailsPage />} />
       </Routes>
     </>
   );
 };
-// <Route path="*" element={<NotFound/>}/>
 
 export default App;

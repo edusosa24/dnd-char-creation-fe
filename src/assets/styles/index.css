@@ -34,6 +34,11 @@ body,
   }
 }
 
+input[type='checkbox'][aria-disabled='true'] {
+  background-color: blue;
+  pointer-events: none;
+}
+
 .table-scroll::-webkit-scrollbar {
   width: 4px;
   height: 3px;
