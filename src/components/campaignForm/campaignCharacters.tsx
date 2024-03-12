@@ -12,7 +12,6 @@ export const CampaignCharacters = () => {
   })[0];
 
   const handleDetails = async (charId: any) => {
-    console.log('Under Development', charId);
     window.open(`${window.location.origin}/character/${charId}`);
   };
 
@@ -31,7 +30,6 @@ export const CampaignCharacters = () => {
             return char.id;
           })
           .filter((char: any) => char !== character.id);
-        console.log(chars);
 
         const camp = {
           name: campaign.name,
