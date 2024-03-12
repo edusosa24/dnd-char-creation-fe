@@ -9,7 +9,7 @@ export const CampaignCharacters = () => {
   const dispatch = useAppDispatch();
   const campaign: any = useAppSelector((state) => {
     return state.campaigns;
-  });
+  })[0];
 
   const handleDetails = async (charId: any) => {
     console.log('Under Development', charId);

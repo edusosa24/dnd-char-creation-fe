@@ -23,7 +23,7 @@ export const CharacterForm = (charId: any) => {
 
   const character: any = useAppSelector((state) => {
     return state.characters;
-  });
+  })[0];
 
   const methods = useForm({
     values: { ...character }

@@ -38,7 +38,7 @@ export const deleteCampaign = (campaignId: string, session: any) => {
 export const loadOneCampaign = (campaignId: string) => {
   return async (dispatch: Dispatch) => {
     const data = await campaignServices.getOne(campaignId);
-    dispatch(updateCampaigns(data));
+    dispatch(updateCampaigns([data]));
   };
 };
 

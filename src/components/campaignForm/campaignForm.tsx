@@ -19,7 +19,7 @@ export const CampaignForm = (campId: any) => {
 
   const campaign: any = useAppSelector((state) => {
     return state.campaigns;
-  });
+  })[0];
 
   const methods = useForm({
     values: { ...campaign }
