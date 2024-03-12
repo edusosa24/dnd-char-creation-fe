@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { iUser } from '../utils/interfaces/iUser';
 
-const baseUrl: string = 'http://localhost:3000/api/users';
+const baseUrl: string = 'https://dnd-char-creation-be.onrender.com/api/users';
 
 const getOne = async (userId: string) => {
   const response = await axios.get(`${baseUrl}/${userId}`).catch((err) => {

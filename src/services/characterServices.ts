@@ -1,7 +1,8 @@
 import axios from 'axios';
 import * as newChar from '../assets/emptyObjects/emptyChar.json';
 
-const baseUrl: string = 'http://localhost:3000/api/characters';
+const baseUrl: string =
+  'https://dnd-char-creation-be.onrender.com/api/characters';
 
 const getOne = async (userId: string) => {
   const response = await axios.get(`${baseUrl}/${userId}`).catch((err) => {

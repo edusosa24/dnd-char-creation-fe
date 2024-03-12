@@ -9,7 +9,7 @@ import { useAppSelector } from '../utils/hooks';
 export const CharacterEditPage = () => {
   const character: any = useAppSelector((state) => {
     return state.characters;
-  });
+  })[0];
 
   const navigate = useNavigate();
   const data = useParams();

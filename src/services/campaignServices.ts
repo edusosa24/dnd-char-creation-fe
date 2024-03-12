@@ -1,7 +1,8 @@
 import axios from 'axios';
 import * as newCamp from '../assets/emptyObjects/emptyCampaign.json';
 
-const baseUrl: string = 'http://localhost:3000/api/campaigns';
+const baseUrl: string =
+  'https://dnd-char-creation-be.onrender.com/api/campaigns';
 
 const getOne = async (userId: string) => {
   const response = await axios.get(`${baseUrl}/${userId}`).catch((err) => {
