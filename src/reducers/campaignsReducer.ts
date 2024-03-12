@@ -44,7 +44,7 @@ export const loadOneCampaign = (campaignId: string) => {
 
 export const updateOneCampaign = (campaign: iCampaign) => {
   return async (dispatch: Dispatch) => {
-    dispatch(updateCampaigns(campaign));
+    dispatch(updateCampaigns([campaign]));
   };
 };
 

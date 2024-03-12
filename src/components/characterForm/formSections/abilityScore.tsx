@@ -30,7 +30,7 @@ export const AbilityScore = () => {
         <h4 className={`${style.subTitle}`}>STATS</h4>
         <div className={`${style.statsDiv}`}>
           <fieldset className={`${style.statsFieldSet}`}>
-            <label className={`${style.statsLabel}`}>STR</label>
+            <p className={`${style.statsLabel}`}>STR</p>
             <input
               {...register('abilityScore.stats.strength.value', {
                 onChange: (e) => {
@@ -59,7 +59,7 @@ export const AbilityScore = () => {
             />
           </fieldset>
           <fieldset className={`${style.statsFieldSet}`}>
-            <label className={`${style.statsLabel}`}>DEX</label>
+            <p className={`${style.statsLabel}`}>DEX</p>
             <input
               {...register('abilityScore.stats.dexterity.value', {
                 onChange: (e) => {
@@ -88,7 +88,7 @@ export const AbilityScore = () => {
             />
           </fieldset>
           <fieldset className={`${style.statsFieldSet}`}>
-            <label className={`${style.statsLabel}`}>CON</label>
+            <p className={`${style.statsLabel}`}>CON</p>
             <input
               {...register('abilityScore.stats.constitution.value', {
                 onChange: (e) => {
@@ -117,7 +117,7 @@ export const AbilityScore = () => {
             />
           </fieldset>
           <fieldset className={`${style.statsFieldSet}`}>
-            <label className={`${style.statsLabel}`}>INT</label>
+            <p className={`${style.statsLabel}`}>INT</p>
             <input
               {...register('abilityScore.stats.intelligence.value', {
                 onChange: (e) => {
@@ -146,7 +146,7 @@ export const AbilityScore = () => {
             />
           </fieldset>
           <fieldset className={`${style.statsFieldSet}`}>
-            <label className={`${style.statsLabel}`}>WIS</label>
+            <p className={`${style.statsLabel}`}>WIS</p>
             <input
               {...register('abilityScore.stats.wisdom.value', {
                 onChange: (e) => {
@@ -175,7 +175,7 @@ export const AbilityScore = () => {
             />
           </fieldset>
           <fieldset className={`${style.statsFieldSet}`}>
-            <label className={`${style.statsLabel}`}>CHA</label>
+            <p className={`${style.statsLabel}`}>CHA</p>
             <input
               {...register('abilityScore.stats.charisma.value', {
                 onChange: (e) => {
@@ -208,7 +208,7 @@ export const AbilityScore = () => {
 
       <div className={`${style.aScoreOthers}`}>
         <fieldset className={`${style.aSOthersFieldSet}`}>
-          <label className={`${style.aSOthersLabel}`}>Inspiration</label>
+          <p className={`${style.aSOthersLabel}`}>Inspiration</p>
           <input
             {...register('abilityScore.inspiration', {
               onChange: (e) => {
@@ -224,7 +224,7 @@ export const AbilityScore = () => {
           />
         </fieldset>
         <fieldset className={`${style.aSOthersFieldSet}`}>
-          <label className={`${style.aSOthersLabel}`}>Prof. bonus</label>
+          <p className={`${style.aSOthersLabel}`}>Prof. bonus</p>
           <input
             {...register('abilityScore.proficiencyBonus', {
               onChange: (e) => {
@@ -240,7 +240,7 @@ export const AbilityScore = () => {
           />
         </fieldset>
         <fieldset className={`${style.aSOthersFieldSet}`}>
-          <label className={`${style.aSOthersLabel}`}>Passive Wisdom</label>
+          <p className={`${style.aSOthersLabel}`}>Passive Wisdom</p>
           <input
             {...register('abilityScore.passiveWisdom', {
               onChange: (e) => {
@@ -277,7 +277,7 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.statSavesLabel}`}>STR</label>
+          <p className={`${style.statSavesLabel}`}>STR</p>
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
@@ -298,7 +298,7 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.statSavesLabel}`}>DEX</label>
+          <p className={`${style.statSavesLabel}`}>DEX</p>
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
@@ -319,7 +319,7 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.statSavesLabel}`}>CON</label>
+          <p className={`${style.statSavesLabel}`}>CON</p>
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
@@ -340,7 +340,7 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.statSavesLabel}`}>INT</label>
+          <p className={`${style.statSavesLabel}`}>INT</p>
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
@@ -361,7 +361,7 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.statSavesLabel}`}>WIS</label>
+          <p className={`${style.statSavesLabel}`}>WIS</p>
         </fieldset>
         <fieldset className={`${style.statSavesFieldSet}`}>
           <input
@@ -382,7 +382,7 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.statSavesLabel}`}>CHA</label>
+          <p className={`${style.statSavesLabel}`}>CHA</p>
         </fieldset>
       </div>
 
@@ -407,9 +407,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Acrobatics <span className="font-normal">(Dex)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -430,9 +430,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Animal Handling <span className="font-normal">(Wis)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -453,9 +453,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Arcana <span className="font-normal">(Int)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -476,9 +476,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Athletics <span className="font-normal">(Str)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -499,9 +499,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Deception <span className="font-normal">(Cha)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -522,9 +522,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             History <span className="font-normal">(Int)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -545,9 +545,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Insight <span className="font-normal">(Wis)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -568,9 +568,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Intimidation <span className="font-normal">(Cha)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -591,9 +591,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Investigation <span className="font-normal">(Int)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -614,9 +614,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Medicine <span className="font-normal">(Wis)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -637,9 +637,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Nature <span className="font-normal">(Int)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -660,9 +660,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Perception <span className="font-normal">(Wis)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -683,9 +683,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Performance <span className="font-normal">(Cha)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -706,9 +706,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Persuasion <span className="font-normal">(Cha)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -729,9 +729,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Religion <span className="font-normal">(Int)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -752,9 +752,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Sleight of Hand <span className="font-normal">(Dex)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -775,9 +775,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Stealth <span className="font-normal">(Dex)</span>
-          </label>
+          </p>
         </fieldset>
         <fieldset className={`${style.skillsFieldSet}`}>
           <input
@@ -798,9 +798,9 @@ export const AbilityScore = () => {
             inputMode="numeric"
             onInput={(e) => limitInput(e)}
           />
-          <label className={`${style.skillsLabel} `}>
+          <p className={`${style.skillsLabel} `}>
             Survival <span className="font-normal">(Wis)</span>
-          </label>
+          </p>
         </fieldset>
       </div>
     </section>

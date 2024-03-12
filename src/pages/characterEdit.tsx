@@ -4,13 +4,8 @@ import { CharacterForm } from '../components/characterForm/characterForm';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getStorage } from '../utils/functions';
 import { useEffect } from 'react';
-import { useAppSelector } from '../utils/hooks';
 
 export const CharacterEditPage = () => {
-  const character: any = useAppSelector((state) => {
-    return state.characters;
-  })[0];
-
   const navigate = useNavigate();
   const data = useParams();
 
@@ -19,7 +14,8 @@ export const CharacterEditPage = () => {
     if (session === null || session.username !== data.username) {
       navigate(`/character/${data.id}`);
     }
-  }, [navigate, data, character]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   return (
     <div className={`${style.container}`}>

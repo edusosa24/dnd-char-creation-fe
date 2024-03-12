@@ -11,7 +11,7 @@ export const FeatTraitsAndOther = () => {
       </h2>
       <div className={`${style.featuresDiv}`}>
         <fieldset className={`${style.featuresFieldSet} h-40`}>
-          <label className={`${style.featuresLabel}`}>PERSONALITY TRAITS</label>
+          <p className={`${style.featuresLabel}`}>PERSONALITY TRAITS</p>
           <textarea
             {...register(
               'featuresTraitsAndOtherProficiencies.personalityTraits',
@@ -22,7 +22,7 @@ export const FeatTraitsAndOther = () => {
           />
         </fieldset>
         <fieldset className={`${style.featuresFieldSet} h-40`}>
-          <label className={`${style.featuresLabel}`}>IDEALS</label>
+          <p className={`${style.featuresLabel}`}>IDEALS</p>
           <textarea
             {...register('featuresTraitsAndOtherProficiencies.ideals', {
               maxLength: 200
@@ -32,7 +32,7 @@ export const FeatTraitsAndOther = () => {
           />
         </fieldset>
         <fieldset className={`${style.featuresFieldSet} h-40`}>
-          <label className={`${style.featuresLabel}`}>BONDS</label>
+          <p className={`${style.featuresLabel}`}>BONDS</p>
           <textarea
             {...register('featuresTraitsAndOtherProficiencies.bonds', {
               maxLength: 200
@@ -42,7 +42,7 @@ export const FeatTraitsAndOther = () => {
           />
         </fieldset>
         <fieldset className={`${style.featuresFieldSet} h-40`}>
-          <label className={`${style.featuresLabel}`}>FLAWS</label>
+          <p className={`${style.featuresLabel}`}>FLAWS</p>
           <textarea
             {...register('featuresTraitsAndOtherProficiencies.flaws', {
               maxLength: 200
@@ -52,9 +52,9 @@ export const FeatTraitsAndOther = () => {
           />
         </fieldset>
         <fieldset className={`${style.featuresFieldSet} h-96`}>
-          <label className={`${style.featuresLabel}`}>
+          <p className={`${style.featuresLabel}`}>
             OTHER PROFICIENCIES & LANGUAGES
-          </label>
+          </p>
           <textarea
             {...register(
               'featuresTraitsAndOtherProficiencies.otherProficienciesAndLanguages',
@@ -65,7 +65,7 @@ export const FeatTraitsAndOther = () => {
           />
         </fieldset>
         <fieldset className={`${style.featuresFieldSet} h-96`}>
-          <label className={`${style.featuresLabel}`}>FEATURES & TRAITS</label>
+          <p className={`${style.featuresLabel}`}>FEATURES & TRAITS</p>
           <textarea
             {...register(
               'featuresTraitsAndOtherProficiencies.featuresAndTraits',

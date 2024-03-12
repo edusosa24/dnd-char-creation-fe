@@ -28,7 +28,7 @@ export const EquipmentAndMoney = () => {
       <h2 className={`${style.sectionTitle}`}>Equipment & Money:</h2>
       <div className={`${style.moneyDiv}`}>
         <fieldset className={`${style.moneyFieldSet}`}>
-          <label className={`${style.moneyLabel}`}>CP</label>
+          <p className={`${style.moneyLabel}`}>CP</p>
           <input
             {...register('equipmentAndMoney.money.copper', {
               onChange: (e) => {
@@ -44,7 +44,7 @@ export const EquipmentAndMoney = () => {
           />
         </fieldset>
         <fieldset className={`${style.moneyFieldSet}`}>
-          <label className={`${style.moneyLabel}`}>SP</label>
+          <p className={`${style.moneyLabel}`}>SP</p>
           <input
             {...register('equipmentAndMoney.money.silver', {
               onChange: (e) => {
@@ -60,7 +60,7 @@ export const EquipmentAndMoney = () => {
           />
         </fieldset>
         <fieldset className={`${style.moneyFieldSet}`}>
-          <label className={`${style.moneyLabel}`}>EP</label>
+          <p className={`${style.moneyLabel}`}>EP</p>
           <input
             {...register('equipmentAndMoney.money.electrum', {
               onChange: (e) => {
@@ -76,7 +76,7 @@ export const EquipmentAndMoney = () => {
           />
         </fieldset>
         <fieldset className={`${style.moneyFieldSet}`}>
-          <label className={`${style.moneyLabel}`}>GP</label>
+          <p className={`${style.moneyLabel}`}>GP</p>
           <input
             {...register('equipmentAndMoney.money.gold', {
               onChange: (e) => {
@@ -92,7 +92,7 @@ export const EquipmentAndMoney = () => {
           />
         </fieldset>
         <fieldset className={`${style.moneyFieldSet}`}>
-          <label className={`${style.moneyLabel}`}>PP</label>
+          <p className={`${style.moneyLabel}`}>PP</p>
           <input
             {...register('equipmentAndMoney.money.platinum', {
               onChange: (e) => {

@@ -36,7 +36,7 @@ export const GeneralAndAppearance = () => {
       </fieldset>
       <div className={`${style.generalDiv}`}>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Class</label>
+          <p>Class</p>
           <input
             {...register('general.class', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -44,7 +44,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Level</label>
+          <p>Level</p>
           <input
             {...register('general.level', {
               onChange: (e) => {
@@ -60,7 +60,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Background</label>
+          <p>Background</p>
           <input
             {...register('general.background', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -68,7 +68,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Player name</label>
+          <p>Player name</p>
           <input
             {...register('general.playerName', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -76,7 +76,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Race</label>
+          <p>Race</p>
           <input
             {...register('general.race', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -84,7 +84,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Alignment</label>
+          <p>Alignment</p>
           <input
             {...register('general.alignment', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -92,7 +92,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Experience points</label>
+          <p>Experience points</p>
           <input
             {...register('general.experience', {
               onChange: (e) => {
@@ -110,7 +110,7 @@ export const GeneralAndAppearance = () => {
       </div>
       <div className={`${style.generalDiv}`}>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Age</label>
+          <p>Age</p>
           <input
             {...register('appearance.age', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -118,7 +118,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Height</label>
+          <p>Height</p>
           <input
             {...register('appearance.height', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -126,7 +126,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Weight</label>
+          <p>Weight</p>
           <input
             {...register('appearance.weight', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -134,7 +134,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Eyes</label>
+          <p>Eyes</p>
           <input
             {...register('appearance.eyes', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -142,7 +142,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Skin</label>
+          <p>Skin</p>
           <input
             {...register('appearance.skin', { maxLength: 18 })}
             className={`${style.generalInput}`}
@@ -150,7 +150,7 @@ export const GeneralAndAppearance = () => {
           />
         </fieldset>
         <fieldset className={`${style.generalFieldSet}`}>
-          <label>Hair</label>
+          <p>Hair</p>
           <input
             {...register('appearance.hair', { maxLength: 18 })}
             className={`${style.generalInput}`}

@@ -31,7 +31,8 @@ export const CampaignForm = (campId: any) => {
     } catch (err) {
       console.log(err);
     }
-  }, [campId, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [campId]);
 
   const updateCampName: SubmitHandler<typeof campaignSchema> = async (
     data: any

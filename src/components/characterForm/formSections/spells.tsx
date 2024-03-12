@@ -51,9 +51,7 @@ export const Spells = () => {
     <section className={`${style.spellsSection}`}>
       <h2 className={`${style.sectionTitle}`}>Spells:</h2>
       <fieldset className={`${style.spellsOthersFieldSet}`}>
-        <label className={`${style.spellsOthersLabel}`}>
-          SPELLCASTING CLASS
-        </label>
+        <p className={`${style.spellsOthersLabel}`}>SPELLCASTING CLASS</p>
         <input
           {...register('spells.castingClass', { maxLength: 30 })}
           className={`${style.spellcastingClassInput}`}
@@ -63,9 +61,7 @@ export const Spells = () => {
       </fieldset>
       <div className={`${style.spellsOthersDiv}`}>
         <fieldset className={`${style.spellsOthersFieldSet}`}>
-          <label className={`${style.spellsOthersLabel}`}>
-            SPELLCASTING ABILITY
-          </label>
+          <p className={`${style.spellsOthersLabel}`}>SPELLCASTING ABILITY</p>
           <input
             {...register('spells.castingAbility', { maxLength: 5 })}
             className={`${style.spellsOthersInput}`}
@@ -74,7 +70,7 @@ export const Spells = () => {
           />
         </fieldset>
         <fieldset className={`${style.spellsOthersFieldSet}`}>
-          <label className={`${style.spellsOthersLabel}`}>SPELL SAVE DC</label>
+          <p className={`${style.spellsOthersLabel}`}>SPELL SAVE DC</p>
           <input
             {...register('spells.saveDice', {
               onChange: (e) => {
@@ -90,9 +86,7 @@ export const Spells = () => {
           />
         </fieldset>
         <fieldset className={`${style.spellsOthersFieldSet}`}>
-          <label className={`${style.spellsOthersLabel}`}>
-            SPELL ATTACK BONUS
-          </label>
+          <p className={`${style.spellsOthersLabel}`}>SPELL ATTACK BONUS</p>
           <input
             {...register('spells.bonusAttack', {
               onChange: (e) => {

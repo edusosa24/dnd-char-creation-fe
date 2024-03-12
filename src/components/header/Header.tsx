@@ -12,10 +12,7 @@ export const Header = () => {
   return (
     <nav className={`${style.component}`}>
       <div className={`${style.logo}`}>
-        <img
-          src={'/src/assets/images/dnd-logo.png'}
-          className={`${style.logoImg}`}
-        />
+        <div className={`${style.logoImg}`} />
         <h3 className={`${style.logoText}`}>
           CHARACTER <br /> CREATOR
         </h3>

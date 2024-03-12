@@ -69,16 +69,16 @@ export const CampaignCharacters = () => {
             return (
               <tr className={`${style.tbodyRow}`} key={character.id}>
                 <td className={`${style.td} 2xl:w-[23%]`}>
-                  {character.general.name}
+                  {character?.general?.name}
                 </td>
                 <td className={`${style.td} 2xl:w-[23%]`}>
-                  {character.general.class}
+                  {character?.general?.class}
                 </td>
                 <td className={`${style.td} 2xl:w-[20%]`}>
-                  {character.general.race}
+                  {character?.general?.race}
                 </td>
                 <td className={`${style.td} 2xl:w-[8%]`}>
-                  {character.general.level}
+                  {character?.general?.level}
                 </td>
                 <td className={`${style.td} 2xl:w-[8%]`}>
                   <button

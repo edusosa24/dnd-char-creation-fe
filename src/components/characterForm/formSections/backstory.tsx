@@ -9,9 +9,7 @@ export const Backstory = () => {
       <h2 className={`${style.sectionTitle}`}>Backstory:</h2>
       <div className={`${style.backstoryDiv}`}>
         <fieldset className={`${style.backstoryFieldSet} h-96`}>
-          <label className={`${style.backstoryLabel}`}>
-            ALLIES & ORGNAIZATIONS
-          </label>
+          <p className={`${style.backstoryLabel}`}>ALLIES & ORGNAIZATIONS</p>
           <textarea
             {...register('backstory.alliesAndOrganizations', {
               maxLength: 1200
@@ -21,9 +19,9 @@ export const Backstory = () => {
           />
         </fieldset>
         <fieldset className={`${style.backstoryFieldSet} h-96`}>
-          <label className={`${style.backstoryLabel}`}>
+          <p className={`${style.backstoryLabel}`}>
             ADDITIONAL FEATURES & TRAITS
-          </label>
+          </p>
           <textarea
             {...register('backstory.additionalFeaturesAndTraits', {
               maxLength: 1200
@@ -33,7 +31,7 @@ export const Backstory = () => {
           />
         </fieldset>
         <fieldset className={`${style.backstoryFieldSet} h-96`}>
-          <label className={`${style.backstoryLabel}`}>TREASURE</label>
+          <p className={`${style.backstoryLabel}`}>TREASURE</p>
           <textarea
             {...register('backstory.treasure', { maxLength: 1200 })}
             className={`${style.backstoryTextArea}`}
@@ -41,9 +39,7 @@ export const Backstory = () => {
           />
         </fieldset>
         <fieldset className={`${style.backstoryFieldSet} h-96`}>
-          <label className={`${style.backstoryLabel}`}>
-            CHARACTER BACKSTORY
-          </label>
+          <p className={`${style.backstoryLabel}`}>CHARACTER BACKSTORY</p>
           <textarea
             {...register('backstory.backstory', { maxLength: 1200 })}
             className={`${style.backstoryTextArea}`}

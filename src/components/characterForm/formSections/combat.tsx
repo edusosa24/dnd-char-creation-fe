@@ -28,7 +28,7 @@ export const Combat = () => {
       <h2 className={`${style.sectionTitle}`}>Combat:</h2>
       <div className={`${style.combatOthersDiv}`}>
         <fieldset className={`${style.combatOthersFieldSet}`}>
-          <label className={`${style.combatOthersLabel}`}>Armor Class</label>
+          <p className={`${style.combatOthersLabel}`}>Armor Class</p>
           <input
             {...register('combat.armorClass', {
               onChange: (e) => {
@@ -44,7 +44,7 @@ export const Combat = () => {
           />
         </fieldset>
         <fieldset className={`${style.combatOthersFieldSet}`}>
-          <label className={`${style.combatOthersLabel}`}>Initiative</label>
+          <p className={`${style.combatOthersLabel}`}>Initiative</p>
           <input
             {...register('combat.initiative', {
               onChange: (e) => {
@@ -60,7 +60,7 @@ export const Combat = () => {
           />
         </fieldset>
         <fieldset className={`${style.combatOthersFieldSet}`}>
-          <label className={`${style.combatOthersLabel}`}>Speed</label>
+          <p className={`${style.combatOthersLabel}`}>Speed</p>
           <input
             {...register('combat.speed', {
               onChange: (e) => {
@@ -79,7 +79,7 @@ export const Combat = () => {
       <div className={`${style.combatOthersDiv}`}>
         <h4 className={`${style.subTitle}`}>Hit Points:</h4>
         <fieldset className={`${style.combatHPFieldSet}`}>
-          <label className={`${style.combatHPLabel}`}>Total:</label>
+          <p className={`${style.combatHPLabel}`}>Total:</p>
           <input
             {...register('combat.maxHitPoints', {
               onChange: (e) => {
@@ -95,7 +95,7 @@ export const Combat = () => {
           />
         </fieldset>
         <fieldset className={`${style.combatHPFieldSet}`}>
-          <label className={`${style.combatHPLabel}`}>Current:</label>
+          <p className={`${style.combatHPLabel}`}>Current:</p>
           <input
             {...register('combat.currentHitPoints', {
               onChange: (e) => {
@@ -111,7 +111,7 @@ export const Combat = () => {
           />
         </fieldset>
         <fieldset className={`${style.combatHPFieldSet}`}>
-          <label className={`${style.combatHPLabel}`}>Temporary:</label>
+          <p className={`${style.combatHPLabel}`}>Temporary:</p>
           <input
             {...register('combat.temporaryHitPoints', {
               onChange: (e) => {
@@ -142,7 +142,7 @@ export const Combat = () => {
             />
           </fieldset>
           <fieldset className={`${style.combatHDFieldSet}`}>
-            <label className={`${style.combatHDLabel}`}>Total:</label>
+            <p className={`${style.combatHDLabel}`}>Total:</p>
             <input
               {...register('combat.hitDiceTotal', { maxLength: 15 })}
               className={`${style.combatHDInput} rounded-b-full`}
@@ -157,7 +157,7 @@ export const Combat = () => {
               Death Saves:
             </h4>
             <fieldset className={`${style.combatDSFieldSet}`}>
-              <label className={`${style.combatDSLabel}`}>Success:</label>
+              <p className={`${style.combatDSLabel}`}>Success:</p>
               <input
                 {...register('combat.deathSaves.success', { max: 3, min: 0 })}
                 className={`${style.combatDSInput} text-green-700`}
@@ -172,7 +172,7 @@ export const Combat = () => {
               />
             </fieldset>
             <fieldset className={`${style.combatDSFieldSet}`}>
-              <label className={`${style.combatDSLabel}`}>Failure:</label>
+              <p className={`${style.combatDSLabel}`}>Failure:</p>
               <input
                 {...register('combat.deathSaves.failure', { max: 3, min: 0 })}
                 className={`${style.combatDSInput} text-red-700`}

@@ -20,7 +20,8 @@ export const CampaignEditPage = () => {
     if (session?.username !== data?.username) {
       navigate(`/profile/${session.username}`);
     }
-  }, [navigate, data]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   return (
     <div className={`${style.container}`}>

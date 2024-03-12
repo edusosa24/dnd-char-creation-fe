@@ -35,7 +35,8 @@ export const CharacterForm = (charId: any) => {
     } catch (err) {
       console.log(err);
     }
-  }, [charId, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const updateChar: SubmitHandler<typeof characterSchema> = async (
     data: any
