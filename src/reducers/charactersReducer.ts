@@ -5,8 +5,8 @@ const characterSlice = createSlice({
   name: 'character',
   initialState: [],
   reducers: {
-    updateCharacters(state, action) {
-      return (state = action.payload);
+    updateCharacters(_state, action) {
+      return (_state = action.payload);
     }
   }
 });

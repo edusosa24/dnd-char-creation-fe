@@ -6,8 +6,8 @@ const campaignSlice = createSlice({
   name: 'campaign',
   initialState: [],
   reducers: {
-    updateCampaigns(state, action) {
-      return (state = action.payload);
+    updateCampaigns(_state, action) {
+      return (_state = action.payload);
     }
   }
 });

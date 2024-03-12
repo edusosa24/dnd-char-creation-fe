@@ -6,8 +6,8 @@ const sessionSlice = createSlice({
   name: 'session',
   initialState: { userId: '', username: '', token: '', expiresAt: 0 },
   reducers: {
-    setCredentials(state: any, action: any) {
-      return (state = { ...action.payload });
+    setCredentials(_state: any, action: any) {
+      return (_state = { ...action.payload });
     }
   }
 });
